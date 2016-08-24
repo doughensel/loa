@@ -1,6 +1,7 @@
 # loa
 Micro-site for goal tracking and daily affirmations
 
+## .htaccess/.htpasswd
 If you include the .htaccess/.htpasswd files (apache)...<br />
 username: **test**<br />
 password: **test**<br />
