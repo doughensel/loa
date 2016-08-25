@@ -1,4 +1,0 @@
-AuthType Basic
-AuthName "Password Protected Area"
-AuthUserFile /Library/WebServer/Documents/loa/.htpasswd
-Require valid-user
