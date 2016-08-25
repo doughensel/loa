@@ -8,20 +8,34 @@
 	<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 	<style amp-custom>
 		html{font-family:Arial;font-size:62.5%;}
+		.clear{clear:both;}
+		#content{
+			margin: 0 0 0 1vw;
+			width: 100%;
+			max-width: 790px;
+		}
 		form,fieldset{border:0 none;}
-		article section{
-			width: 48vw;
+		article section, #focus{
+			width: 48.5vw;
 			height: 48vw;
-			max-width: 250px;
-			max-height: 250px;
 			overflow: scroll;
-			box-shadow: 0vw 0.5vw 2vw rgba(0,0,0,0.25);
+			box-shadow: 0vw 0.5vw 1vw rgba(0,0,0,0.25);
 			float: left;
 			outline: red;
-			margin: 1vw;
+			margin: 0vw 1vw 1vw 0vw;
 			padding: 0;
 		}
 		section{font-size:1.8rem;}
+		#focus{
+			height: 48vw;
+			max-height: 250px;
+			width: 98vw;
+			max-width: 777px;
+		}
+		@media screen and (min-width: 750px){
+			#content{margin:auto;}
+			article section, #focus{max-width: 250px; max-height: 250px;}
+		}
 	</style>
 	<script async src="https://cdn.ampproject.org/v0.js"></script>
 	<script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
@@ -37,10 +51,19 @@
 	</header>
 	<main role="main" id="content">
 		<article role="article">
+			<div id="focus">
+				<h1>Focus</h1>
+			</div>
 			<section role="region">
+				<h2>Timeline</h2>
 				<p>Lorem Ipsum</p>
 			</section>
 			<section role="region">
+				<h2>Inspiration</h2>
+				<p>Lorem Ipsum</p>
+			</section>
+			<section role="region">
+				<h2>Thank You</h2>
 				<form method="post" action="test.php" target="_top">
 					<fieldset>
 						<label>
@@ -55,7 +78,20 @@
 					</fieldset>
 				</form>
 			</section>
+			<section role="region">
+				<h2>Gratitudes</h2>
+				<p>Lorem Ipsum</p>
+			</section>
+			<section role="region">
+				<h2>Other</h2>
+				<p>Lorem Ipsum</p>
+			</section>
+			<section role="region">
+				<h2>Mastermind</h2>
+				<p>Lorem Ipsum</p>
+			</section>
 		</article>
+		<div class="clear"></div>
 	</main>
 	<footer role="contentinfo">
 	</footer>
