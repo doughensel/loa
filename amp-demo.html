@@ -1,0 +1,61 @@
+<!doctype html>
+<html ⚡ lang="en">
+<head>
+	<title>LoA</title>
+	<meta charset="utf-8">
+	<link rel="canonical" href="hello-world.html">
+	<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+	<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+	<style amp-custom>
+		body{font-family:Arial;}
+		form,fieldset{border:0 none;}
+		article section{    
+			width: 48vw;
+			height: 48vw;
+			max-width: 500px;
+			max-height: 500px;
+			overflow: scroll;
+			box-shadow: 0vw 0.5vw 2vw rgba(0,0,0,0.25);
+			float: left;
+			outline: red;
+			margin: 1vw;
+			padding: 0;
+		}
+	</style>
+	<script async src="https://cdn.ampproject.org/v0.js"></script>
+	<script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+</head>
+<body>
+	<a href="#content" id="skipnav">Jump to Content</a>
+	<header role="banner">
+		<nav role="navigation">
+			<ul role="menubar">
+				<li role="menuitem"><a href="#">Edit</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main role="main" id="content">
+		<article role="article">
+			<section role="region">
+			</section>
+			<section role="region">
+				<form method="post" action="test.php" target="_top">
+					<fieldset>
+						<label>
+							<span>Your name</span>
+							<input type="text" name="name" required>
+						</label>
+						<label>
+							<span>Your email</span>
+							<input type="email" name="email" required>
+						</label>
+						<input type="submit" value="Subscribe">
+					</fieldset>
+				</form>
+			</section>
+		</article>
+	</main>
+	<footer role="contentinfo">
+	</footer>
+</body>
+</html>
