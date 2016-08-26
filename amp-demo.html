@@ -7,8 +7,14 @@
 	<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 	<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 	<style amp-custom>
-		html{font-family:Arial;font-size:62.5%;}
+		html{font-family:Arial;font-size:62.5%;color:#737373;}
+		body{background-color:#F5F5F5;}
+		h1,h2,h3{width:100%;text-align:center;font-weight:normal;padding:0;margin:0;color:#607D8B;}
+		h1{font-size:2.4rem;color:#546E7A;}
+		h2{font-size:2.2rem;}
+		h3{font-size:2rem;}
 		.clear{clear:both;}
+		#skipnav{ position:absolute;top:-1000px;left:-1000px; }
 		#content{
 			margin: 0 0 0 1vw;
 			width: 100%;
@@ -16,16 +22,18 @@
 		}
 		form,fieldset{border:0 none;}
 		article section, #focus{
+			font-size: calc(1em + 1vw);
 			width: 48.5vw;
 			height: 48vw;
 			overflow: scroll;
 			box-shadow: 0vw 0.5vw 1vw rgba(0,0,0,0.25);
 			float: left;
-			outline: red;
-			margin: 0vw 1vw 1vw 0vw;
+			margin: 0vw 1vw 0.5vw 0vw;
 			padding: 0;
+			background-color:#FAFAFA;
+			outline:solid 1px #CFD8DC;
 		}
-		section{font-size:1.8rem;}
+		section{font-size:1.6rem;}
 		#focus{
 			height: 48vw;
 			max-height: 250px;
@@ -34,7 +42,7 @@
 		}
 		@media screen and (min-width: 750px){
 			#content{margin:auto;}
-			article section, #focus{max-width: 250px; max-height: 250px;}
+			article section, #focus{max-width: 250px; max-height: 250px; margin-bottom: 1vw;}
 		}
 	</style>
 	<script async src="https://cdn.ampproject.org/v0.js"></script>
@@ -53,6 +61,7 @@
 		<article role="article">
 			<div id="focus">
 				<h1>Focus</h1>
+				<h2>Secondary Description</h2>
 			</div>
 			<section role="region">
 				<h2>Timeline</h2>
