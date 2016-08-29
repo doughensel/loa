@@ -12,6 +12,7 @@
 		h1,h2,h3{width:100%;text-align:center;font-weight:normal;padding:0;margin:0;color:#607D8B;}
 		h1{font-size:2.4rem;color:#546E7A;}
 		h2{font-size:2.2rem;}
+			h2 a{ float: right; }
 		h3{font-size:2rem;}
 		p{padding:0;margin: 0vw 0.5vw 1vw 0.5vw;}
 		a{text-decoration:none;color:#0091EA;}
@@ -46,14 +47,17 @@
 			width: 98vw;
 			max-width: 777px;
 			outline:solid 0px transparent;
+			text-align: center;
 		}
+		#focus h2{ margin-bottom: 1rem; }
 		nav{width:100%;max-width:790px;padding:1vw 0vw 2.5vw 0vw;}
 		nav ul{margin:0;padding:0;width:100%;}
 		nav ul li{list-style-type:none;}
 		#editLink{ display:block;float:right;text-align:right;width:40vw;padding-right:3vw;font-size: calc(1em + 1vw); }
 		@media screen and (min-width: 750px){
 			#content,nav{margin:auto;}
-			article section, #focus{max-width:250px;max-height:250px;font-size:1.8rem;}
+			article section, #focus{max-width:250px;max-height:250px;font-size:1.8rem;margin:0.5vw;}
+			#focus h2{ margin-bottom: 3rem; }
 		}
 	</style>
 	<script async src="https://cdn.ampproject.org/v0.js"></script>
@@ -74,33 +78,70 @@
 			<div id="focus">
 				<h1>Focus</h1>
 				<h2>Secondary Description</h2>
+				<!-- max for focus container h:100px x w:250px -->
+				<amp-img
+		            src="img/rose.svg"
+		            width="117" placeholder
+		            alt="Secondary Description"
+		            height="100" role="img" tabindex="0">
+		        </amp-img>
 			</div>
-			<section role="region">
-				<h2>Timeline</h2>
-				<p>Lorem Ipsum</p>
+			<section role="region" id="timeline">
+				<h2>Timeline <a href="#">+</a></h2>
+				<ul>
+					<li>one thing</li>
+					<li>two things</li>
+					<li>next thing</li>
+					<li>another thing</li>
+					<li>how made these things?</li>
+					<li>oh, I made these things</li>
+					<li>these are my things</li>
+					<li>there are many things like them</li>
+					<li>but these things are mine.</li>
+				</ul>
 			</section>
-			<section role="region">
+			<section role="region" id="inspiration">
 				<h2>Inspiration</h2>
 				<p>Lorem Ipsum</p>
+				<p>Testing 123</p>
+				<p>In the Pursuit of Happyness</p>
+				<p>Without friends no one would choose to live, though he had all other goods.</p>
+				<p>Those that know, do.<br />Those that understand teach.</p>
 			</section>
-			<section role="region">
+			<section role="region" id="thanks">
 				<h2>Thank You</h2>
 				<form method="post" action="test.php" target="_top">
 					<fieldset>
 						<label>
-							<span>Your name</span>
+							<span>Thank you for...</span>
 							<input type="text" name="name" required>
 						</label>
 						<label>
-							<span>Your email</span>
-							<input type="email" name="email" required>
+							<span>Thank you for...</span>
+							<input type="text" name="name" required>
 						</label>
-						<input type="submit" value="Subscribe">
+						<label>
+							<span>Thank you for...</span>
+							<input type="text" name="name" required>
+						</label>
+						<label>
+							<span>Thank you for...</span>
+							<input type="text" name="name" required>
+						</label>
+						<label>
+							<span>Thank you for...</span>
+							<input type="text" name="name" required>
+						</label>
+						<input type="submit" value="Thanks!">
 					</fieldset>
 				</form>
 			</section>
 			<section role="region">
 				<h2>Gratitudes</h2>
+				<p>Lorem Ipsum</p>
+				<p>Lorem Ipsum</p>
+				<p>Lorem Ipsum</p>
+				<p>Lorem Ipsum</p>
 				<p>Lorem Ipsum</p>
 			</section>
 			<section role="region">
