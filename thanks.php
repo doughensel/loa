@@ -27,6 +27,6 @@ if( !empty($thanks5) ){
 
 file_put_contents('test.json', json_encode($json));
 
-header( 'Location: amp-demo.html' ) ;
+header( 'Location: stitcher.php' );
 
 ?>
