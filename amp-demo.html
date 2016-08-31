@@ -7,11 +7,11 @@
 	<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 	<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 	<style amp-custom>
-		html{font-family:Arial;font-size:62.5%;color:#004D40;}
+		html{font-family:Arial;font-size:62.5%;color:#1565C0;}
 		body{background-color:#FAFAFA;}
 		h1,h2,h3{width:100%;text-align:center;font-weight:normal;padding:0;margin:0;color:#37474F;}
 		h1{font-size:2.4rem;color:#263238;}
-			h1 + h2{ color:#004D40; }
+			h1 + h2{ color:#1565C0; }
 		h2{font-size:2.2rem;margin-bottom:4vw;}
 			h2 a{ float: right; }
 		h3{font-size:2rem;}
@@ -21,8 +21,8 @@
 		fieldset{margin:0;padding:0;}
 		ul{margin:0;padding-left:2rem;}
 		label{ display: block; }
-		input[type="text"]{ background-color:transparent;border: solid 0px transparent;border-left:solid 1px #777777;border-bottom:solid 1px #777777; display:block; margin: -1rem auto 0rem auto; width: 96%;padding:2%; color:#4527A0; font-size: 1.6rem;}
-		#thanksForm fieldset p:nth-child(2n) input[type="text"]{ border-right: solid 1px #777777; border-left: solid 0 transparent; }
+		input[type="text"]{ background-color:transparent;border: solid 0px transparent;border-left:solid 1px #1E88E5;border-bottom:solid 1px #1E88E5; display:block; margin: -1rem auto 0rem auto; width: 96%;padding:2%; color:#1E88E5; font-size: 1.6rem;}
+		#thanksForm fieldset p:nth-child(2n) input[type="text"]{ border-right: solid 1px #1E88E5; border-left: solid 0 transparent; }
 		.clear{clear:both;}
 		#skipnav{ position:absolute;top:-1000px;left:-1000px; }
 		#content{
@@ -65,6 +65,7 @@
 		@media screen and (min-width: 750px){
 			#content,nav{margin:auto;}
 			article section, #focus{max-width:330px;min-height:1px;height:50vw;max-height:250px;font-size:1.8rem;margin:0.5vw;outline:solid 1px #CFD8DC;}
+			#focus{ max-width: 730px; }
 			h2{ margin-bottom: 3rem; }
 		}
 
@@ -119,27 +120,27 @@
 			</section>
 			<section role="region" id="thanks">
 				<h2>Thanks!</h2>
-				<form method="post" action="test.php" target="_top" id="thanksForm">
+				<form method="post" action="thanks.php" target="_top" id="thanksForm">
 					<fieldset>
 						<p>
 							<label for="thanks1">Thank you for...</label><br />
-							<input type="text" name="thanks1" id="thanks1" value="" required>
+							<input type="text" name="thanks1" id="thanks1" value="">
 						</p>
 						<p>
 							<label for="thanks2">Thank you for...</label><br />
-							<input type="text" name="thanks2" id="thanks2" value="" required>
+							<input type="text" name="thanks2" id="thanks2" value="">
 						</p>
 						<p>
 							<label for="thanks3">Thank you for...</label><br />
-							<input type="text" name="thanks3" id="thanks3" value="" required>
+							<input type="text" name="thanks3" id="thanks3" value="">
 						</p>
 						<p>
 							<label for="thanks4">Thank you for...</label><br />
-							<input type="text" name="thanks4" id="thanks4" value="" required>
+							<input type="text" name="thanks4" id="thanks4" value="">
 						</p>
 						<p>
 							<label for="thanks5">Thank you for...</label><br />
-							<input type="text" name="thanks5" id="thanks5" value="" required>
+							<input type="text" name="thanks5" id="thanks5" value="">
 						</p>
 						<p>
 							<input type="submit" value="Thanks!">
