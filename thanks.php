@@ -27,6 +27,26 @@ if( !empty($thanks5) ){
 
 file_put_contents('test.json', json_encode($json));
 
+
+
+$output = array();
+$temp = array();
+$html = "";
+for( $x = 0; $x<5; $x++ ){
+	$random = rand(0, ( count($json) - 1) );
+	$temp = array_splice( $json, $random, 1 );
+	$html .= "<p>" . $temp[0]["value"] . " <span class=\"date\">" . $temp[0]["date"] . "</span></p>";
+}
+$template_gratitude = file_get_contents('templates/gratitude.html');
+$module_gratitude = str_replace( '{$output}', $html, $template_gratitude );
+
+file_put_contents('modules/gratitude.html', $module_gratitude);
+
+file_put_contents( 'modules/thanks.html', file_get_contents('templates/thanks.html') );
+
+
+
+
 header( 'Location: stitcher.php' );
 
 ?>
