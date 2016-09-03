@@ -1,4 +1,4 @@
-# loa
+# LoA
 Micro-site for goal tracking and daily affirmations
 
 ## Later Releases:
