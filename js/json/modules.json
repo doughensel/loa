@@ -1,0 +1,39 @@
+{
+	"module" : [
+		{
+			"name" : "focus",
+			"description" : "A primary objective<br />(pulled from the Timeline module).",
+			"position" : 0,
+			"locked" : true,
+			"active" : true
+		},
+		{
+			"name" : "timeline",
+			"description" : "A list of objectives coupled with anticipated achievement dates.",
+			"position" : 1,
+			"locked" : false,
+			"active" : true
+		},
+		{
+			"name" : "inspiration",
+			"description" : "A collection of inspiring quotes and/or thoughts.",
+			"position" : 2,
+			"locked" : false,
+			"active" : true
+		},
+		{
+			"name" : "thanks",
+			"description" : "A daily list of things to be thankful for.",
+			"position" : 3,
+			"locked" : false,
+			"active" : true
+		},
+		{
+			"name" : "gratitude",
+			"description" : "A reminder of things that you have been thankful for<br />(pulled from the Thanks module).",
+			"position": 4,
+			"locked" : false,
+			"active" : true
+		}
+	]
+}
