@@ -5,14 +5,15 @@
 	<meta charset="utf-8">
 	<link rel="canonical" href="edit.html">
 	<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-	<style>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 	<style>
+		html,body,div,span,h1,h2,h3,h4,p,a,img,ol,ul,li,fieldset,form,label,table,tbody,tfoot,thead,tr,th,td,article,aside,canvas,footer,header,nav,section{border:0;font:normal 100% Arial,sans-serif;vertical-align:baseline;margin:0;padding:0}article,aside,footer,header,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}html{font-size: 62.5%}body{font-size:1.4rem}h1{font-size:xx-large}h2{font-size:x-large}h3{font-size:large}
+
 		html{font-family:Arial;font-size:62.5%;color:#1565C0;}
 		body{background-color:#FAFAFA;}
 		h1,h2,h3{width:100%;text-align:center;font-weight:normal;padding:0;margin:0;color:#37474F;}
 		h1{font-size:2.4rem;color:#263238;}
 			h1 + h2{ color:#1565C0; }
-		h2{font-size:2.2rem;margin-bottom:4vw;}
+		h2{font-size:2.2rem;margin-bottom:4vw;text-transform:capitalize;}
 			h2 a{ float: right; }
 		h3{font-size:2rem;}
 		p{padding:0;margin: 0vw 2vw 2vw 2vw;}
@@ -51,8 +52,8 @@
 		}
 		nav{width:100%;max-width:790px;padding:1vw 0vw 2.5vw 0vw;}
 		nav ul{margin:0;padding:0;width:100%;}
-		nav ul li{list-style-type:none;}
-		#editLink{ display:block;float:right;text-align:right;width:40vw;padding-right:3vw;font-size: calc(1em + 1vw); }
+		nav ul li{list-style-type:none;font-size: calc(1em + 1vw);float:left;padding-left:3vw;display:block;}
+		#editLink{ float:right;text-align:right;width:40vw;padding-right:3vw; }
 
 		@media screen and (min-width: 750px){
 			#content,nav{margin:auto;}
@@ -71,6 +72,7 @@
 	<a href="#content" id="skipnav">Jump to Content</a>
 	<header role="banner">
 		<nav role="navigation">
+			<h1>LoA</h1>
 			<ul role="menubar">
 				<li role="menuitem" id="indexLink"><a href="index.html">Back</a></li>
 				<li role="menuitem" id="editLink"><a href="#">Done</a></li>
@@ -78,83 +80,98 @@
 			</ul>
 		</nav>
 	</header>
-	<main role="main" id="content">
-		<article role="article">
-			<div id="focus">
-				<h1>Focus</h1>
-				<h2>Secondary Description</h2>
-				<!-- max for focus container h:100px x w:250px -->
-				<amp-img
-		            src="img/rose.svg"
-		            width="117" placeholder
-		            alt="Secondary Description"
-		            height="100" role="img" tabindex="0">
-		        </amp-img>
-			</div>
-			<section role="region" id="timeline">
-				<h2>Timeline <a href="#">+</a></h2>
-				<ul>
-					<li>one thing</li>
-					<li>two things</li>
-					<li>next thing</li>
-					<li>another thing</li>
-					<li>how made these things?</li>
-					<li>oh, I made these things</li>
-					<li>these are my things</li>
-					<li>there are many things like them</li>
-					<li>but these things are mine.</li>
-				</ul>
-			</section>
-			<section role="region" id="inspiration">
-				<h2>Inspiration <a href="#">+</a></h2>
-				<p>Lorem Ipsum</p>
-				<p>Testing 123</p>
-				<p>In the Pursuit of Happyness</p>
-				<p>Without friends no one would choose to live, though he had all other goods.</p>
-				<p>Those that know, do.<br />Those that understand teach.</p>
-			</section>
-			<section role="region" id="thanks">
-				<h2>Thanks!</h2>
-				<form method="post" action="php/thanks.php" target="_top" id="thanksForm">
-					<fieldset>
-						<p>
-							<label for="thanks1">Thank you for...</label><br />
-							<input type="text" name="thanks1" id="thanks1" value="">
-						</p>
-						<p>
-							<label for="thanks2">Thank you for...</label><br />
-							<input type="text" name="thanks2" id="thanks2" value="">
-						</p>
-						<p>
-							<label for="thanks3">Thank you for...</label><br />
-							<input type="text" name="thanks3" id="thanks3" value="">
-						</p>
-						<p>
-							<label for="thanks4">Thank you for...</label><br />
-							<input type="text" name="thanks4" id="thanks4" value="">
-						</p>
-						<p>
-							<label for="thanks5">Thank you for...</label><br />
-							<input type="text" name="thanks5" id="thanks5" value="">
-						</p>
-						<p>
-							<input type="submit" value="Thanks!">
-						</p>
-					</fieldset>
-				</form>
-			</section>
-			<section role="region">
-				<h2>Gratitudes</h2>
-				<p>Lorem Ipsum</p>
-				<p>Lorem Ipsum</p>
-				<p>Lorem Ipsum</p>
-				<p>Lorem Ipsum</p>
-				<p>Lorem Ipsum</p>
-			</section>
-		</article>
-		<div class="clear"></div>
-	</main>
+
+	<form method="post" action="php/layout.php" target="_top" id="editForm"><fieldset>
+
+		<main role="main" id="content">
+			<article role="article" id="output" aria-live="polite" aria-relevant="additions removals">
+			</article>
+			<div class="clear"></div>
+		</main>
+	
+	</fieldset></form>
+
 	<footer role="contentinfo">
 	</footer>
+
+
+	<script type="text/javascript">
+		function loadDoc( path, callback ) {
+			// http://www.w3schools.com/ajax/default.asp
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+				if (this.readyState == 4 ){
+					if( this.status == 200 ){
+						callback( this );
+					}else{
+						callback( 'error' );
+					}
+				}
+			};
+			xhttp.open("GET", path, true);
+			xhttp.send();
+		}
+
+		loadDoc( 'js/json/modules.json', createHTML );
+
+		function createHTML( data ){
+			if( data !== 'error' ){
+
+				var htmlActive      = document.createElement('div');
+					htmlActive.id   = 'htmlActive';
+				var htmlInactive    = document.createElement('div');
+					htmlInactive.id = 'htmlInactive';
+
+				var target = document.getElementById('output');
+				var elem   = undefined;
+				var info   = JSON.parse(data.responseText);
+				var module = info.module;
+
+				var section, h2, p, text;
+
+				function getElement( id ){
+					for( var i in module ){
+						if( module[i].position === id ){
+							return module[i];
+							break;
+						}
+					}
+					return null;
+				}// END getElement()
+
+				for( var i=0, x=module.length; i<x; i++ ){
+					elem = getElement(i);
+					if( elem ){
+
+						section = document.createElement('section');
+						section.setAttribute('role', 'region');
+						section.id = elem.name;
+						section.className = elem.active;
+
+						h2 = document.createElement('h2');
+						h2.innerHTML = elem.name;
+
+						p = document.createElement('p');
+						p.innerHTML = elem.description;
+
+						section.appendChild(h2);
+						section.appendChild(p);
+
+						if( elem.active ){
+							htmlActive.appendChild( section );
+						}else{
+							htmlInactive.appendChild( section );
+						}
+
+					}// END if(elem)
+				}// END for(i<module.length)
+
+				target.appendChild( htmlActive );
+				target.appendChild( htmlInactive );
+
+			}// END if(data !== 'error')
+		}// END createHTML(data)
+	</script>
+
 </body>
 </html>
