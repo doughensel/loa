@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<title>LoA | Edit</title>
+	<title>Edit | LoA</title>
 	<meta charset="utf-8">
 	<link rel="canonical" href="edit.html">
 	<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
@@ -11,14 +11,25 @@
 		html{font-family:Arial;font-size:62.5%;color:#1565C0;}
 		body{background-color:#FAFAFA;}
 		h1,h2,h3{width:100%;text-align:center;font-weight:normal;padding:0;margin:0;color:#37474F;}
-		h1{font-size:2.4rem;color:#263238;}
+		h1{font-size:2.4rem;color:#263238;margin:auto;width:11vw;margin-bottom:-2.4rem;}
 			h1 + h2{ color:#1565C0; }
 		h2{font-size:2.2rem;margin-bottom:4vw;text-transform:capitalize;}
 			h2 a{ float: right; }
 		h3{font-size:2rem;}
 		p{padding:0;margin: 0vw 2vw 2vw 2vw;}
 		a{text-decoration:none;color:#0091EA;}
-		button, input[type="submit"], submit{ background-color:#0091EA;color:#FFFFFF;border:solid 0px transparent; padding: 10px 15px; font-size:1.8rem;}
+		button, input[type="submit"], submit{ background-color:transparent;color:#0091EA;border:solid 0px transparent; padding: 0px; font-size:1em;}
+		button.moduleControl{
+		    height: 5vw;
+		    width: 6vw;
+		    border-radius: 10vw;
+		    background-color: #FFFFFF;
+		    margin: -3vw;
+		    float: left;
+		    border: solid 1px #0091EA;
+		    padding-bottom: 2rem;
+		    box-shadow: 0px 0px 6px 3px rgba( 0, 0, 0, 0.21);
+		}
 		fieldset{margin:0;padding:0;}
 		ul{margin:0;padding-left:2rem;}
 		label{ display: block; }
@@ -32,20 +43,21 @@
 		}
 		form,fieldset{border:0 none;}
 		article section, #focus{
-			font-size: calc(1em + 1vw);
-			padding: 2vw;
-			width: 46vw;
-			height: 46vw;
+			font-size: 1.4rem;
+			padding: 5vw;
+			width: 40vw;
+			height: 40vw;
 			overflow: scroll;
 			float: left;
 			background-color:#FAFAFA;
-			outline:solid 1px #CFD8DC;
+			outline:solid 1px #FFFFFF;
+			box-shadow: inset 0 0 0 5vw #CFD8DC;
 		}
 		section{font-size:1.6rem;}
 		#focus{
 			min-height: 48vw;
 			height: auto;
-			width: 96vw;
+			width: 90vw;
 			max-width: 777px;
 			outline:solid 0px transparent;
 			text-align: center;
@@ -55,11 +67,22 @@
 		nav ul li{list-style-type:none;font-size: calc(1em + 1vw);float:left;padding-left:3vw;display:block;}
 		#editLink{ float:right;text-align:right;width:40vw;padding-right:3vw; }
 
+		#htmlInactive{ margin-top: 2vw; }
+		#htmlInactive section{ opacity: 0.7; }
+
 		@media screen and (min-width: 750px){
 			#content,nav{margin:auto;}
-			article section, #focus{max-width:330px;min-height:1px;height:50vw;max-height:250px;font-size:1.8rem;margin:0.5vw 0.4vw 0.5vw 0.5vw;outline:solid 1px #CFD8DC;}
-			#focus{ max-width: 730px; }
+			article section, #focus{max-width:336px;width:52vw;min-height:250px;height:52vw;max-height:336px;font-size:1.8rem;margin:0.5vw 0.4vw 0.5vw 0.5vw;outline:solid 1px #CFD8DC;box-shadow: inset 0 0 0 15px #CFD8DC;padding:25px;}
+			#focus{ max-width: 735px; }
+			h1{ margin-bottom:-3.4rem;font-size:3.4rem; }
 			h2{ margin-bottom: 3rem; }
+			button.moduleControl {
+			    height: 35px;
+			    width: 35px;
+			    border-radius: 70px;
+			    margin: -21px;
+			    padding-bottom: 2px;
+			}
 		}
 
 	</style>
@@ -70,32 +93,44 @@
 </head>
 <body>
 	<a href="#content" id="skipnav">Jump to Content</a>
+	
+	
 	<header role="banner">
 		<nav role="navigation">
 			<h1>LoA</h1>
+			
 			<ul role="menubar">
 				<li role="menuitem" id="indexLink"><a href="index.html">Back</a></li>
-				<li role="menuitem" id="editLink"><a href="#">Done</a></li>
+				<li role="menuitem" id="editLink">
+					
+					<form method="post" action="php/layout.php" target="_top" id="editForm"><fieldset>
+						<input type="hidden" value="" id="formData" name="formData" />
+						<input type="submit" id="submit" value="Done" />
+					</fieldset></form>
+
+				</li>
 				<div class="clear"></div>
 			</ul>
 		</nav>
 	</header>
 
-	<form method="post" action="php/layout.php" target="_top" id="editForm"><fieldset>
+		
 
 		<main role="main" id="content">
 			<article role="article" id="output" aria-live="polite" aria-relevant="additions removals">
 			</article>
 			<div class="clear"></div>
 		</main>
-	
-	</fieldset></form>
 
 	<footer role="contentinfo">
 	</footer>
 
 
 	<script type="text/javascript">
+		'use strict';
+
+		var module = undefined;
+
 		function loadDoc( path, callback ) {
 			// http://www.w3schools.com/ajax/default.asp
 			var xhttp = new XMLHttpRequest();
@@ -112,32 +147,38 @@
 			xhttp.send();
 		}
 
-		loadDoc( 'js/json/modules.json', createHTML );
+		(function(){
+			var d = new Date();
+			var n = d.getTime();
+			var reference = 'js/json/modules.json?v=' + n;
+			loadDoc( reference, createHTML );
+		})();
 
 		function createHTML( data ){
 			if( data !== 'error' ){
+
+				if( !module ){
+					var info   = JSON.parse(data.responseText);
+						module = info.module;
+				}
+				// Save the module data in an hidden input
+				document.getElementById('formData').value = JSON.stringify(module);
 
 				var htmlActive      = document.createElement('div');
 					htmlActive.id   = 'htmlActive';
 				var htmlInactive    = document.createElement('div');
 					htmlInactive.id = 'htmlInactive';
+				var clear           = document.createElement('div');
+					clear.className = 'clear';
+				var clear2          = clear.cloneNode(true);
 
 				var target = document.getElementById('output');
 				var elem   = undefined;
-				var info   = JSON.parse(data.responseText);
-				var module = info.module;
+				
 
-				var section, h2, p, text;
+				var section, btn, h2, p, text;
 
-				function getElement( id ){
-					for( var i in module ){
-						if( module[i].position === id ){
-							return module[i];
-							break;
-						}
-					}
-					return null;
-				}// END getElement()
+				target.innerHTML = '';
 
 				for( var i=0, x=module.length; i<x; i++ ){
 					elem = getElement(i);
@@ -148,12 +189,19 @@
 						section.id = elem.name;
 						section.className = elem.active;
 
+						btn = document.createElement('button');
+						btn.setAttribute('type', 'button');
+						btn.setAttribute('onclick', 'javascript:moduleUpdate("' + elem.name + '");');
+						btn.className = 'moduleControl';
+						btn.innerHTML = (elem.active)? 'x' : '+';
+
 						h2 = document.createElement('h2');
 						h2.innerHTML = elem.name;
 
 						p = document.createElement('p');
 						p.innerHTML = elem.description;
 
+						section.appendChild(btn);
 						section.appendChild(h2);
 						section.appendChild(p);
 
@@ -166,11 +214,34 @@
 					}// END if(elem)
 				}// END for(i<module.length)
 
+				htmlActive.appendChild( clear );
+				htmlInactive.appendChild( clear2 );
+
 				target.appendChild( htmlActive );
 				target.appendChild( htmlInactive );
 
 			}// END if(data !== 'error')
 		}// END createHTML(data)
+
+		function getElement( id ){
+			for( var i in module ){
+				if( module[i].position === id || module[i].name === id ){
+					return module[i];
+					break;
+				}
+			}
+			return null;
+		}// END getElement()
+
+		function moduleUpdate( name ){
+			if( !module ){
+				return;
+			}
+			var elem = getElement( name );
+			elem.active = (elem.active)? false : true;
+			createHTML( module );
+		}// END moduleUpdate
+
 	</script>
 
 </body>
