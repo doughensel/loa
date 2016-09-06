@@ -14,6 +14,7 @@
 			h1 + h2{ color:#1565C0; }
 		h2{font-size:2.2rem;margin-bottom:4vw;}
 			h2 a{ float: right; }
+			#focus h2{margin-bottom:0;}
 		h3{font-size:2rem;}
 		p{padding:0;margin: 0vw 2vw 2vw 2vw;}
 		a{text-decoration:none;color:#0091EA;}
@@ -69,6 +70,7 @@
 	<a href="#content" id="skipnav">Jump to Content</a>
 	<header role="banner">
 		<nav role="navigation">
+			<h1>LoA</h1>
 			<ul role="menubar">
 				<li role="menuitem" id="editLink"><a href="edit.html">Edit</a></li>
 				<div class="clear"></div>
@@ -77,9 +79,9 @@
 	</header>
 	<main role="main" id="content">
 		<article role="article">
-			<div id="focus">
-				<h1>Focus</h1>
-				<h2>Secondary Description</h2>
+			<section id="focus">
+				<h2>Focus</h2>
+				<h3>Secondary Description</h3>
 				<!-- max for focus container h:100px x w:250px -->
 				<amp-img
 		            src="img/rose.svg"
@@ -87,7 +89,7 @@
 		            alt="Secondary Description"
 		            height="100" role="img" tabindex="0">
 		        </amp-img>
-			</div>
+			</section>
 			<section role="region" id="timeline">
 				<h2>Timeline <a href="#">+</a></h2>
 				<ul>
@@ -140,7 +142,7 @@
 					</fieldset>
 				</form>
 			</section>
-			<section role="region">
+			<section role="region" id="gratitude">
 				<h2>Gratitudes</h2>
 				<p>Lorem Ipsum</p>
 				<p>Lorem Ipsum</p>
