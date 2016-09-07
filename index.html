@@ -1,50 +1,152 @@
-<!DOCTYPE HTML>
-<html lang="en">
-	<head>
-	<!-- test 123456 -->
-		<title>LoA</title>
+<!doctype html>
+<html ⚡ lang="en">
+<head>
+	<title>LoA</title>
+	<meta charset="utf-8">
+	<link rel="canonical" href="hello-world.html">
+	<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+	<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+	<style amp-custom>
+		html{font-family:Arial;font-size:62.5%;color:#1565C0;}
+		body{background-color:#FAFAFA;}
+		h1,h2,h3{width:100%;text-align:center;font-weight:normal;padding:0;margin:0;color:#37474F;}
+		h1{font-size:2.4rem;color:#263238;margin:auto;width:11vw;margin-bottom:-2.4rem;}
+			h1 + h2{ color:#1565C0; }
+		h2{font-size:2.2rem;margin-bottom:4vw;}
+			h2 a{ float: right; }
+			#focus h2{margin-bottom:0;}
+		h3{font-size:2rem;}
+		p{padding:0;margin: 0vw 2vw 2vw 2vw;}
+		a{text-decoration:none;color:#0091EA;}
+		button, input[type="submit"], submit{ background-color:#0091EA;color:#FFFFFF;border:solid 0px transparent; padding: 10px 15px; font-size:1.8rem;}
+		fieldset{margin:0;padding:0;}
+		ul{margin:0;padding-left:2rem;}
+		label{ display: block; }
+		input[type="text"]{ background-color:transparent;border: solid 0px transparent;border-left:solid 1px #1E88E5;border-bottom:solid 1px #1E88E5; display:block; margin: -1rem auto 0rem auto; width: 96%;padding:2%; color:#1E88E5; font-size: 1.6rem;}
+		#thanksForm fieldset p:nth-child(2n) input[type="text"]{ border-right: solid 1px #1E88E5; border-left: solid 0 transparent; }
+		.clear{clear:both;}
+		#skipnav{ position:absolute;top:-1000px;left:-1000px; }
+		#content{
+			width: 100%;
+			max-width: 800px;
+		}
+		form,fieldset{border:0 none;}
+		article section, #focus{
+			font-size: calc(1em + 1vw);
+			padding: 2vw;
+			width: 46vw;
+			height: 46vw;
+			overflow: scroll;
+			float: left;
+			background-color:#FAFAFA;
+			outline:solid 1px #CFD8DC;
+		}
+		section{font-size:1.6rem;}
+		#focus{
+			min-height: 48vw;
+			height: auto;
+			width: 96vw;
+			max-width: 777px;
+			outline:solid 0px transparent;
+			text-align: center;
+		}
+		nav{width:100%;max-width:790px;padding:1vw 0vw 2.5vw 0vw;}
+		nav ul{margin:0;padding:0;width:100%;}
+		nav ul li{list-style-type:none;}
+		#editLink{ display:block;float:right;text-align:right;width:40vw;padding-right:3vw;font-size: calc(1em + 1vw); }
 
-		<meta charset="utf-8" />
-		<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+		@media screen and (min-width: 750px){
+			#content,nav{margin:auto;}
+			article section, #focus{max-width:330px;min-height:1px;height:50vw;max-height:250px;font-size:1.8rem;margin:0.5vw 0.4vw 0.5vw 0.5vw;outline:solid 1px #CFD8DC;}
+			#focus{ max-width: 730px; }
+			h1{ margin-bottom:-3.4rem;font-size:3.4rem; }
+			h2{ margin-bottom: 3rem; }
+		}
 
-		<meta name="viewport"    content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-		<meta name="description" content="">
-		<link rel="author"    href="humans.txt" />
-
-		<style>
-			/** Dummied down CSS reset **/
-			html,body,div,span,h1,h2,h3,h4,p,a,img,ol,ul,li,fieldset,form,label,table,tbody,tfoot,thead,tr,th,td,article,aside,canvas,footer,header,nav,section{border:0;font:normal 100% Arial,sans-serif;vertical-align:baseline;margin:0;padding:0}article,aside,footer,header,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}html{font-size: 62.5%}body{font-size:1.4rem}h1{font-size:xx-large}h2{font-size:x-large}h3{font-size:large}
-			/** Critical/Above the fold CSS **/
-			#skipnav{position:absolute;top:-1000px;left:-1000px}
-			.clear{clear:both}
-		</style>
-
-		<!-- Other styles not captured in inline CSS -->
-		<link rel="stylesheet" href="css/styles.css" screen="all" />
-		<link rel="stylesheet" href="css/print.css"  screen="print" />
-
-	</head>
-	<body>
-
-		<a href="#content" id="skipnav">Jump to Content</a>
-		<header role="banner">
-			<nav role="navigation">
-				<ul role="menubar">
-					<li role="menuitem"><a href="#">Edit</a></li>
-				</ul>
-			</nav>
-		</header>
-		<main role="main" id="content">
-			<article role="article">
-				<section role="region">
-				</section>
-				<section role="region">
-				</section>
-			</article>
-		</main>
-		<footer role="contentinfo">
-		</footer>
-		<!-- JAVASCRIPT -->
-		<script type="text/javascript" src="js/scripts.js" async></script>
-	</body>
+	</style>
+	<script async src="https://cdn.ampproject.org/v0.js"></script>
+	<script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+</head>
+<body>
+	<a href="#content" id="skipnav">Jump to Content</a>
+	<header role="banner">
+		<nav role="navigation">
+			<h1>LoA</h1>
+			<ul role="menubar">
+				<li role="menuitem" id="editLink"><a href="edit.html">Edit</a></li>
+				<div class="clear"></div>
+			</ul>
+		</nav>
+	</header>
+	<main role="main" id="content">
+		<article role="article" id="output">
+			<section id="focus">
+	<h2>Focus</h2>
+	<h3>Secondary Description</h3>
+	<!-- max for focus container h:100px x w:250px -->
+	<amp-img
+        src="img/rose.svg"
+        width="117" placeholder
+        alt="Secondary Description"
+        height="100" role="img" tabindex="0">
+    </amp-img>
+</section><section role="region" id="timeline">
+	<h2>Timeline <a href="#">+</a></h2>
+	<ul>
+		<li>one thing</li>
+		<li>two things</li>
+		<li>next thing</li>
+		<li>another thing</li>
+		<li>how made these things?</li>
+		<li>oh, I made these things</li>
+		<li>these are my things</li>
+		<li>there are many things like them</li>
+		<li>but these things are mine.</li>
+	</ul>
+</section><section role="region" id="inspiration">
+	<h2>Inspiration <a href="#">+</a></h2>
+	<p>Lorem Ipsum</p>
+	<p>Testing 123</p>
+	<p>In the Pursuit of Happyness</p>
+	<p>Without friends no one would choose to live, though he had all other goods.</p>
+	<p>Those that know, do.<br />Those that understand teach.</p>
+</section><section role="region" id="thanks">
+	<h2>Thanks!</h2>
+	<form method="post" action="thanks.php" target="_top" id="thanksForm">
+		<fieldset>
+			<p>
+				<label for="thanks1">Thank you for...</label><br />
+				<input type="text" name="thanks1" id="thanks1" value="">
+			</p>
+			<p>
+				<label for="thanks2">Thank you for...</label><br />
+				<input type="text" name="thanks2" id="thanks2" value="">
+			</p>
+			<p>
+				<label for="thanks3">Thank you for...</label><br />
+				<input type="text" name="thanks3" id="thanks3" value="">
+			</p>
+			<p>
+				<label for="thanks4">Thank you for...</label><br />
+				<input type="text" name="thanks4" id="thanks4" value="">
+			</p>
+			<p>
+				<label for="thanks5">Thank you for...</label><br />
+				<input type="text" name="thanks5" id="thanks5" value="">
+			</p>
+			<p>
+				<input type="submit" value="Thanks!">
+			</p>
+		</fieldset>
+	</form>
+</section><section role="region">
+	<h2>Gratitudes</h2>
+	<p>Love <span class="date">Sep 02, 2016</span></p><p>Music <span class="date">Sep 02, 2016</span></p><p>Earth <span class="date">Sep 02, 2016</span></p>
+</section>
+		</article>
+		<div class="clear"></div>
+	</main>
+	<footer role="contentinfo">
+	</footer>
+</body>
 </html>
