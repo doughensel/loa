@@ -75,6 +75,8 @@
 		#timelineForm p{ margin-top: 5vw; }
 		#timelineForm input[type="submit"]{ margin: auto;display: block; }
 		#timeCount label{ float: left; width: 20vw; padding-top: 3vw; margin-left: 10vw; }
+		#activeBox{ display:block;width:100%;margin-top:10vw;text-align:center; }
+		#btn_delete{ background-color:#B71C1C; }
 
 
 		@media screen and (min-width: 750px){
@@ -119,7 +121,7 @@
 			<form method="post" action="php/timeline.php" target="_top" id="timelineForm">
 				<fieldset>
 
-					<h3>Add New Event</h3>
+					<h3><span id="eventState">Add New</span> Event</h3>
 
 					<input type="hidden" name="active" id="active" value="true" />
 					<input type="hidden" name="eventID" id="eventID" value="" />
@@ -164,8 +166,10 @@
 					</p>
 
 					<p>
-						<input type="submit" value="Save" />
+						<input type="submit" value="Save" /><br />
+						<span id="activeBox"></span>
 					</p>
+
 
 				</fieldset>
 			</form>
@@ -219,45 +223,54 @@
 			if( data && data !== 'error' && eventList === undefined ){
 				eventList = JSON.parse(data.responseText);
 			}
+			if( eventList ){
+				$('eventID').el.value = id;
+				$('active').el.value = eventList[id]['active'];
+				$('eventName').el.value = eventList[id]['name'];
+				$('eventDescription').el.innerHTML = eventList[id]['desc'];
+				$('eventDate').el.value = eventList[id]['date'];
+				if( eventList[id]['focus'] ){
+					$('focusActive').el.checked = true;
+				}
 
-			$('eventID').el.value = id;
-			$('active').el.value = eventList[id]['active'];
-			$('eventName').el.value = eventList[id]['name'];
-			$('eventDescription').el.innerHTML = eventList[id]['desc'];
-			$('eventDate').el.value = eventList[id]['date'];
-			if( eventList[id]['focus'] ){
-				$('focusActive').el.checked = true;
-			}
+				// miliseconds | seconds | minutes | hours | days
+				var eventDate = eventList[id]['date'].split('-');
+				var eDate     = new Date( eventDate[0], eventDate[1]-1, eventDate[2] );
+				var dateDiff  = eDate - new Date();
+					dateDiff /= 1000;
 
+				if( dateDiff > 0 ){
+					var yearMath = 60 * 60 * 24 * 365.25;
+					var numYears = Math.floor( dateDiff / yearMath );
 
-			// miliseconds | seconds | minutes | hours | days
-			var eventDate = eventList[id]['date'].split('-');
-			var eDate     = new Date( eventDate[0], eventDate[1]-1, eventDate[2] );
-			var dateDiff  = eDate - new Date();
-				dateDiff /= 1000;
+					dateDiff -= numYears * yearMath;
 
-			if( dateDiff > 0 ){
-				var yearMath = 60 * 60 * 24 * 365.25;
-				var numYears = Math.floor( dateDiff / yearMath );
+					var weekMath = 60 * 60 * 24 * 7;
+					var numWeeks = Math.floor( dateDiff / weekMath );
 
-				dateDiff -= numYears * yearMath;
+					// Honestly, right now figuring out months gets kind of crazy considering each month has different total number of days.
 
-				var weekMath = 60 * 60 * 24 * 7;
-				var numWeeks = Math.floor( dateDiff / weekMath );
+					dateDiff -= numWeeks * weekMath;
 
-				// Honestly, right now figuring out months gets kind of crazy considering each month has different total number of days.
+					var dayMath = 60 * 60 * 24;
+					var numDays = Math.floor( dateDiff / dayMath );
 
-				dateDiff -= numWeeks * weekMath;
-
-				var dayMath = 60 * 60 * 24;
-				var numDays = Math.floor( dateDiff / dayMath );
-
-				$('timeDayCount').el.value = (numDays === 0)? '' : numDays;
-				$('timeWeekCount').el.value = (numWeeks === 0)? '' : numWeeks;
-				$('timeMonthCount').el.value = ''; // TODO
-				$('timeYearCount').el.value = (numYears === 0)? '' : numYears;
-			}
-			
+					$('timeDayCount').el.value = (numDays === 0)? '' : numDays;
+					$('timeWeekCount').el.value = (numWeeks === 0)? '' : numWeeks;
+					$('timeMonthCount').el.value = ''; // TODO
+					$('timeYearCount').el.value = (numYears === 0)? '' : numYears;
+				}
+				var btn = document.createElement('button');
+				btn.innerHTML = 'Delete?';
+				btn.id = 'btn_delete';
+				btn.type = 'button';
+				btn.addEventListener('click', function(){
+					// 	TODO: add verification step
+					$('active').el.value = 'false';
+					$('timelineForm').el.submit();
+				});
+				$('activeBox').el.appendChild( btn );
+			}// END if(eventList)
 		}
 
 		(function(){
@@ -270,13 +283,17 @@
 					temp = param[i].split('=');
 					paramDump[temp[0]] = parseInt(temp[1]);
 				}
-				id = paramDump['id'];
+				if( paramDump['id'] ){
+					$('eventState').el.innerHTML = 'Edit';
+					id = paramDump['id'];
 
-				var d = new Date();
-				var n = d.getTime();
-				var reference = 'js/json/timeline.json?v=' + n;
+					var d = new Date();
+					var n = d.getTime();
+					var reference = 'js/json/timeline.json?v=' + n;
 
-				loadDoc( reference, createHTML );
+					loadDoc( reference, createHTML );
+				}
+				
 			}
 		})();
 

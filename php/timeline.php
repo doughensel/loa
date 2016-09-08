@@ -59,7 +59,9 @@ foreach( $json as $key => $value ){
 	if( $value[active] && $value[date] >= date('Y-m-d') ){
 		$html .= $result;
 	}else{
-		$html2 .= $result;
+		if( $value[active] ){
+			$html2 .= $result;
+		}
 	}
 }
 $html .= '</ul>';
