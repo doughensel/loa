@@ -18,13 +18,19 @@
 		h3{font-size:2rem;}
 		p{padding:0;margin: 0vw 2vw 2vw 2vw;}
 		a{text-decoration:none;color:#0091EA;}
-		button, input[type="submit"], submit{ background-color:#0091EA;color:#FFFFFF;border:solid 0px transparent; padding: 10px 15px; font-size:1.8rem;}
+		button, input[type="submit"], submit, .btn{ background-color:#0091EA;color:#FFFFFF;border:solid 0px transparent; padding: 10px 15px; font-size:1.4rem; float:right;margin-top:1rem;}
 		fieldset{margin:0;padding:0;}
-		ul{margin:0;padding-left:2rem;}
+		ul{margin:0;padding-left:0rem;}
 		label{ display: block; }
 		input[type="text"]{ background-color:transparent;border: solid 0px transparent;border-left:solid 1px #1E88E5;border-bottom:solid 1px #1E88E5; display:block; margin: -1rem auto 0rem auto; width: 96%;padding:2%; color:#1E88E5; font-size: 1.6rem;}
 		textarea{ border: solid 1px #1E88E5; width: 90%; padding: 5%; background-color: transparent; font-size: 1.6rem; color: #1E88E5; height: 30vw;resize: none;}
 		input[type="text"]:focus, input[type="number"]:focus, textarea:focus{ background-color: #FFFFFF; }
+		#timeline li{ list-style:none;clear:both; }
+			#timeline li a{ padding: 0.5rem;display:block; }
+				#timeline li a span.txtDate, 
+				#timeline li a span.txtDesc{ width: 100%;display:block; }
+				#timeline li a span.txtDesc{ color: #1565C0; }
+		#timeline ul + ul{ opacity: 0.7; }
 		#thanksForm fieldset p:nth-child(2n) input[type="text"]{ border-right: solid 1px #1E88E5; border-left: solid 0 transparent; }
 		.clear{clear:both;}
 		#skipnav{ position:absolute;top:-1000px;left:-1000px; }
@@ -83,7 +89,7 @@
 	<main role="main" id="content">
 		<article role="article" id="output">
 			<section id="focus">
-	<h2>Something Awesome</h2><h3>Is coming my way</h3><p>Sep 09, 2016</p>
+	<h2>Something Awesome</h2><h3>Is coming my way...</h3><p>Sep 09, 2016</p>
 	<!-- max for focus container h:100px x w:250px -->
 	<amp-img
         src="img/rose.svg"
@@ -93,8 +99,8 @@
     </amp-img>
 </section><section role="region" id="timeline">
 	<h2>Timeline</h2>
-	<ul><li><a href="timeline.html?id=1">Watch Some TV [Sep 08, 2016]</a></li><li><a href="timeline.html?id=2">Get a Free Cheeseburger [Sep 08, 2016]</a></li><li><a href="timeline.html?id=3">Watch Cartoons [Sep 08, 2016]</a></li><li><a href="timeline.html?id=4">Something Awesome [Sep 09, 2016]</a></li><li><a href="timeline.html?id=5">TEST 123 [Sep 27, 2016]</a></li><li><a href="timeline.html?id=6">Finish portfolio [Dec 05, 2016]</a></li><li><a href="timeline.html?id=7">do a happy dance [Sep 07, 2018]</a></li><li><a href="timeline.html?id=8">Second Time [Apr 05, 2019]</a></li><li><a href="timeline.html?id=9">run THE marathon [Sep 07, 2023]</a></li></ul><ul><li><a href="timeline.html?id=0">Yesterday [Sep 07, 2016]</a></li></ul>
-	<p><a href="timeline.html">Add Timeline Event</a></p>
+	<ul><li><a href="timeline.html?id=1"><span class="txtDesc">Watch less TV</span> <span class="txtDate">Sep 08, 2016</span></a></li><li><a href="timeline.html?id=2"><span class="txtDesc">Watch Cartoons</span> <span class="txtDate">Sep 08, 2016</span></a></li><li><a href="timeline.html?id=3"><span class="txtDesc">Something Awesome</span> <span class="txtDate">Sep 09, 2016</span></a></li><li><a href="timeline.html?id=4"><span class="txtDesc">Test 456</span> <span class="txtDate">Sep 26, 2016</span></a></li><li><a href="timeline.html?id=5"><span class="txtDesc">Get a Free Cheeseburger</span> <span class="txtDate">Oct 21, 2016</span></a></li><li><a href="timeline.html?id=6"><span class="txtDesc">Finish portfolio</span> <span class="txtDate">Dec 05, 2016</span></a></li><li><a href="timeline.html?id=7"><span class="txtDesc">Do a Happy Dance</span> <span class="txtDate">Sep 06, 2018</span></a></li><li><a href="timeline.html?id=8"><span class="txtDesc">Second Time</span> <span class="txtDate">Apr 05, 2019</span></a></li><li><a href="timeline.html?id=9"><span class="txtDesc">Win a race</span> <span class="txtDate">Jan 01, 2020</span></a></li><li><a href="timeline.html?id=10"><span class="txtDesc">run THE marathon</span> <span class="txtDate">Sep 07, 2023</span></a></li></ul><ul><li><a href="timeline.html?id=0"><span class="txtDesc">Yesterday</span> <span class="txtDate">Sep 07, 2016</span></a></li></ul>
+	<p><a class="btn" href="timeline.html">Add Event</a></p>
 </section><section role="region" id="inspiration">
 	<h2>Inspiration <a href="#">+</a></h2>
 	<p>Lorem Ipsum</p>
@@ -133,7 +139,7 @@
 	</form>
 </section><section role="region">
 	<h2>Gratitudes</h2>
-	<p>Technology! <span class="date">Sep 07, 2016</span></p><p>The Internet <span class="date">Sep 08, 2016</span></p><p>Earth <span class="date">Sep 02, 2016</span></p><p>Love <span class="date">Sep 02, 2016</span></p><p>Music <span class="date">Sep 02, 2016</span></p>
+	<p>Love <span class="date">Sep 02, 2016</span></p><p>Technology! <span class="date">Sep 07, 2016</span></p><p>Indoor Plumbing <span class="date">Sep 08, 2016</span></p><p>Earth <span class="date">Sep 02, 2016</span></p><p>Music <span class="date">Sep 02, 2016</span></p>
 </section>
 		</article>
 		<div class="clear"></div>

@@ -53,14 +53,16 @@ function custom_sort($a,$b) {
 
 $html = '<ul>';
 $html2 = '<ul>';
+$counter = 0;
 foreach( $json as $key => $value ){
 	$date2 = date_create_from_format('Y-m-d', $value[date]);
-	$result = '<li><a href="timeline.html?id=' . $key . '">' . $value[name] . ' [' . $date2->format('M d, Y'). ']</a></li>';
+	$result = '<li><a href="timeline.html?id=' . $key . '"><span class="txtDesc">' . $value[name] . '</span> <span class="txtDate">' . $date2->format('M d, Y'). '</span></a></li>';
 	if( $value[active] && $value[date] >= date('Y-m-d') ){
 		$html .= $result;
 	}else{
-		if( $value[active] ){
+		if( $value[active] && $counter < 3 ){
 			$html2 .= $result;
+			$counter++;
 		}
 	}
 }
