@@ -8,7 +8,7 @@ Micro-site for goal tracking and daily affirmations
 'Law of Attraction', 'The Secret', 'Think and Grow Rich', whatever you may subscribe to ... there's a lot of study out there on tips and tricks you can do to help optimize your life.
 
 In these studies, some common themes start to pop up.
-The purpose behind 'LoA' is to create a web tool that will allow for anyone to pick and choose from a variety of modules. Then, use these to hopefully to the benefit in their own lives.
+The purpose behind 'LoA' is to create a web tool that will allow for anyone to pick and choose from a variety of modules. Then, hopefully, use these to the benefit in their own lives.
 
 ## Modules
 ### Focus
