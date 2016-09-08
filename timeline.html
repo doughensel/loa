@@ -122,6 +122,8 @@
 					<h3>Add New Event</h3>
 
 					<input type="hidden" name="active" id="active" value="true" />
+					<input type="hidden" name="eventID" id="eventID" value="" />
+					<input type="hidden" name="eventDate" id="eventDate" value="" />
 
 					<p>
 						<label for="eventName">Event Name</label><br />
@@ -187,7 +189,96 @@
 	<script type="text/javascript">
 		'use strict';
 
+		var eventList = undefined;
+		var id        = undefined;
 
+		var $ = function( elem ){
+			if (!(this instanceof $) ){
+      			return new $(elem);
+			}
+			this.el = document.getElementById( elem );
+		}
+
+		function loadDoc( path, callback ) {
+			// http://www.w3schools.com/ajax/default.asp
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+				if (this.readyState == 4 ){
+					if( this.status == 200 ){
+						callback( this );
+					}else{
+						callback( 'error' );
+					}
+				}
+			};
+			xhttp.open("GET", path, true);
+			xhttp.send();
+		}
+
+		function createHTML( data ){
+			if( data && data !== 'error' && eventList === undefined ){
+				eventList = JSON.parse(data.responseText);
+			}
+
+			$('eventID').el.value = id;
+			$('active').el.value = eventList[id]['active'];
+			$('eventName').el.value = eventList[id]['name'];
+			$('eventDescription').el.innerHTML = eventList[id]['desc'];
+			$('eventDate').el.value = eventList[id]['date'];
+			if( eventList[id]['focus'] ){
+				$('focusActive').el.checked = true;
+			}
+
+
+			// miliseconds | seconds | minutes | hours | days
+			var eventDate = eventList[id]['date'].split('-');
+			var eDate     = new Date( eventDate[0], eventDate[1]-1, eventDate[2] );
+			var dateDiff  = eDate - new Date();
+				dateDiff /= 1000;
+
+			if( dateDiff > 0 ){
+				var yearMath = 60 * 60 * 24 * 365.25;
+				var numYears = Math.floor( dateDiff / yearMath );
+
+				dateDiff -= numYears * yearMath;
+
+				var weekMath = 60 * 60 * 24 * 7;
+				var numWeeks = Math.floor( dateDiff / weekMath );
+
+				// Honestly, right now figuring out months gets kind of crazy considering each month has different total number of days.
+
+				dateDiff -= numWeeks * weekMath;
+
+				var dayMath = 60 * 60 * 24;
+				var numDays = Math.floor( dateDiff / dayMath );
+
+				$('timeDayCount').el.value = (numDays === 0)? '' : numDays;
+				$('timeWeekCount').el.value = (numWeeks === 0)? '' : numWeeks;
+				$('timeMonthCount').el.value = ''; // TODO
+				$('timeYearCount').el.value = (numYears === 0)? '' : numYears;
+			}
+			
+		}
+
+		(function(){
+			var params = window.location.search.substring(1);
+			if( params && params !== '' ){
+				var param = params.split('&');
+				var paramDump = [];
+				var temp = [];
+				for( var i=0, x=param.length; i<x; i++ ){
+					temp = param[i].split('=');
+					paramDump[temp[0]] = parseInt(temp[1]);
+				}
+				id = paramDump['id'];
+
+				var d = new Date();
+				var n = d.getTime();
+				var reference = 'js/json/timeline.json?v=' + n;
+
+				loadDoc( reference, createHTML );
+			}
+		})();
 
 	</script>
 

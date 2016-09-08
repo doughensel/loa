@@ -11,6 +11,8 @@ if( file_exists( $reference ) ){
 
 date_default_timezone_set('America/New_York');
 
+$id = $_POST[eventID];
+
 $active = $_POST[active];
 	$active = ($active === "true" || $active === true)? true : false;
 $name   = $_POST[eventName];
@@ -26,13 +28,21 @@ $year   = $_POST[timeYearCount];
 $focus  = $_POST[focusActive];
 	$focus = ($focus === "on" || $focus === true)? true : false;
 
-
 $dateSt = " +{$day} day +{$week} week +{$month} month +{$year} year";
 $date = date('Y-m-d');
 $date = date('Y-m-d', strtotime( $dateSt, strtotime($date)));
 
+if( $id !== '' && $day === 0 && $week === 0 && $month === 0 && $month === 0 ){
+	$date = $_POST[eventDate];
+}
 
-array_push( $json, array( "name" => $name, "desc" => $desc, "active" => $active, "focus" => $focus, "date" => $date ) );
+$result = array( "name" => $name, "desc" => $desc, "active" => $active, "focus" => $focus, "date" => $date );
+if( $id === '' ){
+	array_push( $json, $result );
+}else{
+	$json[$id] = $result;
+}
+
 
 // Sort by date...
 // http://php.net/manual/en/function.asort.php
@@ -45,7 +55,7 @@ $html = '<ul>';
 $html2 = '<ul>';
 foreach( $json as $key => $value ){
 	$date2 = date_create_from_format('Y-m-d', $value[date]);
-	$result = '<li>' . $value[name] . ' [' . $date2->format('M d, Y'). ']</li>';
+	$result = '<li><a href="timeline.html?id=' . $key . '">' . $value[name] . ' [' . $date2->format('M d, Y'). ']</a></li>';
 	if( $value[active] && $value[date] >= date('Y-m-d') ){
 		$html .= $result;
 	}else{
