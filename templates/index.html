@@ -3,7 +3,7 @@
 <head>
 	<title>LoA</title>
 	<meta charset="utf-8">
-	<link rel="canonical" href="hello-world.html">
+	<link rel="canonical" href="index.html">
 	<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 	<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 	<style amp-custom>
@@ -26,10 +26,15 @@
 		textarea{ border: solid 1px #1E88E5; width: 90%; padding: 5%; background-color: transparent; font-size: 1.6rem; color: #1E88E5; height: 30vw;resize: none;}
 		input[type="text"]:focus, input[type="number"]:focus, textarea:focus{ background-color: #FFFFFF; }
 		#timeline li{ list-style:none;clear:both; }
-			#timeline li a{ padding: 0.5rem;display:block; }
+			#timeline li a,
+			#gratitudes li{ padding: 0.5rem;display:block; }
 				#timeline li a span.txtDate, 
-				#timeline li a span.txtDesc{ width: 100%;display:block; }
-				#timeline li a span.txtDesc{ color: #1565C0; }
+				#timeline li a span.txtDesc,
+				#gratitudes li span.txtDate,
+				#gratitudes span.txtDesc{ width: 100%;display:block; }
+				#timeline li a span.txtDesc,
+				#gratitudes li{ color: #1565C0; }
+				#gratitudes li span.txtDate{ color:#0097A7; }
 		#timeline ul + ul{ opacity: 0.7; }
 		#thanksForm fieldset p:nth-child(2n) input[type="text"]{ border-right: solid 1px #1E88E5; border-left: solid 0 transparent; }
 		.clear{clear:both;}
