@@ -12,7 +12,7 @@
 		h1,h2,h3{width:100%;text-align:center;font-weight:normal;padding:0;margin:0;color:#37474F;}
 		h1{font-size:2.4rem;color:#263238;margin:auto;width:11vw;margin-bottom:-2.4rem;}
 			h1 + h2{ color:#1565C0; }
-		h2{font-size:2.2rem;margin-bottom:4vw;}
+		h2{font-size:2.2rem;margin-bottom:1vw;}
 			h2 a{ float: right; }
 			#focus h2{margin-bottom:0;}
 		h3{font-size:2rem;}
@@ -25,16 +25,13 @@
 		input[type="text"]{ background-color:transparent;border: solid 0px transparent;border-left:solid 1px #1E88E5;border-bottom:solid 1px #1E88E5; display:block; margin: -1rem auto 0rem auto; width: 96%;padding:2%; color:#1E88E5; font-size: 1.6rem;}
 		textarea{ border: solid 1px #1E88E5; width: 90%; padding: 5%; background-color: transparent; font-size: 1.6rem; color: #1E88E5; height: 30vw;resize: none;}
 		input[type="text"]:focus, input[type="number"]:focus, textarea:focus{ background-color: #FFFFFF; }
-		#timeline li{ list-style:none;clear:both; }
-			#timeline li a,
-			#gratitudes li{ padding: 0.5rem;display:block; }
-				#timeline li a span.txtDate, 
-				#timeline li a span.txtDesc,
-				#gratitudes li span.txtDate,
-				#gratitudes span.txtDesc{ width: 100%;display:block; }
-				#timeline li a span.txtDesc,
-				#gratitudes li{ color: #1565C0; }
-				#gratitudes li span.txtDate{ color:#0097A7; }
+		li{ list-style:none;clear:both;padding: 0.5rem;display:block; color: #1565C0; }
+		li a{ display: block;color: #1565C0; }
+			span.txtDate,
+			span.txtDesc{ width: 100%;display:block; }
+			span.txtDate{ color:#0091EA; }
+			span.txtRef{ display: block;text-align: right;padding-left: 17%;width: 83%;font-style: italic;color: #0097A7;}
+				span.txtRef + span.txtDate{ text-align: right; }
 		#timeline ul + ul{ opacity: 0.7; }
 		#thanksForm fieldset p:nth-child(2n) input[type="text"]{ border-right: solid 1px #1E88E5; border-left: solid 0 transparent; }
 		.clear{clear:both;}
@@ -94,7 +91,7 @@
 	<main role="main" id="content">
 		<article role="article" id="output">
 			<section id="focus">
-	<h2>Something Awesome</h2><h3>Is coming my way...</h3><p>Sep 09, 2016</p>
+	<h2>Music</h2><h3>Dance. sing. Laugh.</h3><p>Sep 15, 2016</p>
 	<!-- max for focus container h:100px x w:250px -->
 	<amp-img
         src="img/rose.svg"
@@ -104,11 +101,11 @@
     </amp-img>
 </section><section role="region" id="timeline">
 	<h2>Timeline</h2>
-	<ul><li><a href="timeline.html?id=3"><span class="txtDesc">Something Awesome</span> <span class="txtDate">Sep 09, 2016</span></a></li><li><a href="timeline.html?id=4"><span class="txtDesc">Test 456</span> <span class="txtDate">Sep 26, 2016</span></a></li><li><a href="timeline.html?id=5"><span class="txtDesc">Get a Free Cheeseburger</span> <span class="txtDate">Oct 21, 2016</span></a></li><li><a href="timeline.html?id=6"><span class="txtDesc">Finish portfolio</span> <span class="txtDate">Dec 05, 2016</span></a></li><li><a href="timeline.html?id=7"><span class="txtDesc">Do a Happy Dance</span> <span class="txtDate">Sep 06, 2018</span></a></li><li><a href="timeline.html?id=8"><span class="txtDesc">Second Time</span> <span class="txtDate">Apr 05, 2019</span></a></li><li><a href="timeline.html?id=9"><span class="txtDesc">Win a race</span> <span class="txtDate">Jan 01, 2020</span></a></li><li><a href="timeline.html?id=10"><span class="txtDesc">run THE marathon</span> <span class="txtDate">Sep 07, 2023</span></a></li></ul><ul><li><a href="timeline.html?id=0"><span class="txtDesc">Yesterday</span> <span class="txtDate">Sep 07, 2016</span></a></li><li><a href="timeline.html?id=2"><span class="txtDesc">Watch less TV</span> <span class="txtDate">Sep 08, 2016</span></a></li></ul>
+	<ul><li><a href="timeline.html?id=4"><span class="txtDesc">Music</span> <span class="txtDate">Sep 15, 2016</span></a></li><li><a href="timeline.html?id=5"><span class="txtDesc">Test 456</span> <span class="txtDate">Sep 26, 2016</span></a></li><li><a href="timeline.html?id=6"><span class="txtDesc">Get a Free Cheeseburger</span> <span class="txtDate">Oct 21, 2016</span></a></li><li><a href="timeline.html?id=7"><span class="txtDesc">Finish portfolio</span> <span class="txtDate">Dec 05, 2016</span></a></li><li><a href="timeline.html?id=8"><span class="txtDesc">Do a Happy Dance</span> <span class="txtDate">Sep 06, 2018</span></a></li><li><a href="timeline.html?id=9"><span class="txtDesc">Second Time</span> <span class="txtDate">Apr 05, 2019</span></a></li><li><a href="timeline.html?id=10"><span class="txtDesc">Win a race</span> <span class="txtDate">Jan 01, 2020</span></a></li><li><a href="timeline.html?id=11"><span class="txtDesc">run THE marathon</span> <span class="txtDate">Sep 07, 2023</span></a></li></ul><ul><li><a href="timeline.html?id=0"><span class="txtDesc">Yesterday</span> <span class="txtDate">Sep 07, 2016</span></a></li><li><a href="timeline.html?id=1"><span class="txtDesc">Watch less TV</span> <span class="txtDate">Sep 08, 2016</span></a></li><li><a href="timeline.html?id=3"><span class="txtDesc">Something Awesome</span> <span class="txtDate">Sep 09, 2016</span></a></li></ul>
 	<p><a class="btn" href="timeline.html">Add Event</a></p>
 </section><section role="region" id="inspiration">
 	<h2>Inspiration</h2>
-	<ul><li><span class="txtDesc">"Your life is an occasion. Rise to it."</span> <span class="txtRef">Dustin Hoffman as Mr. Magorium in "Mr. Magorium's Wonder Emporium"</span> <span class="txtDate">2007</span></li><li><span class="txtDesc">"Science without religion is lame. Religion without science is blind."</span> <span class="txtRef">Albert Einstein </span> <span class="txtDate">1879-1955</span></li></ul>
+	<ul id="inspirations"><li><a href="inspiration.html?id=0"><span class="txtDesc">"Your life is an occasion. Rise to it."</span> <span class="txtRef">Dustin Hoffman as Mr. Magorium in "Mr. Magorium's Wonder Emporium"</span> <span class="txtDate">2007</span></a></li><li><a href="inspiration.html?id=1"><span class="txtDesc">"Science without religion is lame. Religion without science is blind."</span> <span class="txtRef">Albert Einstein </span> <span class="txtDate">1879-1955</span></a></li></ul>
 	<p><a class="btn" href="inspiration.html">Add Inspiration</a></p>
 </section><section role="region" id="thanks">
 	<h2>Thanks!</h2>
