@@ -52,6 +52,9 @@ Grattude pulls from the past values passed by the Thanks module -- the intent is
 
 This is for a personal collection of quotes/ideas that the user may find interesting.
 
+**To Do:**
+- [ ] Add the ability to the edit/remove Inspirations
+
 ## Later Release(s):
 * Module: Mastermind Table
 * Module: Vision Board
