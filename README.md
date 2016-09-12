@@ -11,7 +11,7 @@ In these studies, some common themes start to pop up.
 The purpose behind 'LoA' is to create a web tool that will allow for anyone to pick and choose from a variety of modules. Then, hopefully, use these to the benefit in their own lives.
 
 **To Do:**
-- [ ] Create Search tool that can query individual modules and all modules
+- [ ] Create Search tool that can query individual and all modules
 - [ ] Create Image upload tool
 
 ## Modules
@@ -44,6 +44,9 @@ Current max is 5 items per entry; but on submission, the form reloads with 5 new
 **This module can only work with the "__Thanks__" module!**
 
 Grattude pulls from the past values passed by the Thanks module -- the intent is to remind the user what they were greatful for in the past.
+
+**To Do:**
+- [ ] Add the ability to edit/remove past Gratitudes
 
 ### Inspiration
 
