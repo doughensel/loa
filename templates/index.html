@@ -12,7 +12,7 @@
 		h1,h2,h3{width:100%;text-align:center;font-weight:normal;padding:0;margin:0;color:#37474F;}
 		h1{font-size:2.4rem;color:#263238;margin:auto;width:11vw;margin-bottom:-2.4rem;}
 			h1 + h2{ color:#1565C0; }
-		h2{font-size:2.2rem;margin-bottom:4vw;}
+		h2{font-size:2.2rem;margin-bottom:1vw;}
 			h2 a{ float: right; }
 			#focus h2{margin-bottom:0;}
 		h3{font-size:2rem;}
@@ -25,16 +25,13 @@
 		input[type="text"]{ background-color:transparent;border: solid 0px transparent;border-left:solid 1px #1E88E5;border-bottom:solid 1px #1E88E5; display:block; margin: -1rem auto 0rem auto; width: 96%;padding:2%; color:#1E88E5; font-size: 1.6rem;}
 		textarea{ border: solid 1px #1E88E5; width: 90%; padding: 5%; background-color: transparent; font-size: 1.6rem; color: #1E88E5; height: 30vw;resize: none;}
 		input[type="text"]:focus, input[type="number"]:focus, textarea:focus{ background-color: #FFFFFF; }
-		#timeline li{ list-style:none;clear:both; }
-			#timeline li a,
-			#gratitudes li{ padding: 0.5rem;display:block; }
-				#timeline li a span.txtDate, 
-				#timeline li a span.txtDesc,
-				#gratitudes li span.txtDate,
-				#gratitudes span.txtDesc{ width: 100%;display:block; }
-				#timeline li a span.txtDesc,
-				#gratitudes li{ color: #1565C0; }
-				#gratitudes li span.txtDate{ color:#0097A7; }
+		li{ list-style:none;clear:both;padding: 0.5rem;display:block; color: #1565C0; }
+		li a{ display: block;color: #1565C0; }
+			span.txtDate,
+			span.txtDesc{ width: 100%;display:block; }
+			span.txtDate{ color:#0091EA; }
+			span.txtRef{ display: block;text-align: right;padding-left: 17%;width: 83%;font-style: italic;color: #0097A7;}
+				span.txtRef + span.txtDate{ text-align: right; }
 		#timeline ul + ul{ opacity: 0.7; }
 		#thanksForm fieldset p:nth-child(2n) input[type="text"]{ border-right: solid 1px #1E88E5; border-left: solid 0 transparent; }
 		.clear{clear:both;}
