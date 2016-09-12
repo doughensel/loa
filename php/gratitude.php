@@ -16,7 +16,7 @@ $max = ( count($json) < 5 ? count($json) : 5 );
 for( $x = 0; $x<$max; $x++ ){
 	$random = rand(0, ( count($json) - 1) );
 	$temp = array_splice( $json, $random, 1 );
-	$html .= "<p>" . $temp[0]["value"] . " <span class=\"date\">" . $temp[0]["date"] . "</span></p>";
+	$html .= '<li><span class="txtDesc">' . $temp[0]["value"] . '</span> <span class="txtDate">' . $temp[0]["date"] . '</span></li>';
 }
 $template_gratitude = file_get_contents('../templates/gratitude.html');
 $module_gratitude = str_replace( '{$output}', $html, $template_gratitude );
