@@ -58,6 +58,7 @@ This is for a personal collection of quotes/ideas that the user may find interes
 
 ## Later Release(s):
 * Module: Mastermind Table
+	* Pull suggestions from "_Inspiration_" module
 * Module: Vision Board
 * Iframe Inclusion of custom content modules
 	* Weather report
