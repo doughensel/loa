@@ -3,7 +3,7 @@
 <head>
 	<title>LoA</title>
 	<meta charset="utf-8">
-	<link rel="canonical" href="hello-world.html">
+	<link rel="canonical" href="index.html">
 	<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 	<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 	<style amp-custom>
@@ -26,10 +26,15 @@
 		textarea{ border: solid 1px #1E88E5; width: 90%; padding: 5%; background-color: transparent; font-size: 1.6rem; color: #1E88E5; height: 30vw;resize: none;}
 		input[type="text"]:focus, input[type="number"]:focus, textarea:focus{ background-color: #FFFFFF; }
 		#timeline li{ list-style:none;clear:both; }
-			#timeline li a{ padding: 0.5rem;display:block; }
+			#timeline li a,
+			#gratitudes li{ padding: 0.5rem;display:block; }
 				#timeline li a span.txtDate, 
-				#timeline li a span.txtDesc{ width: 100%;display:block; }
-				#timeline li a span.txtDesc{ color: #1565C0; }
+				#timeline li a span.txtDesc,
+				#gratitudes li span.txtDate,
+				#gratitudes span.txtDesc{ width: 100%;display:block; }
+				#timeline li a span.txtDesc,
+				#gratitudes li{ color: #1565C0; }
+				#gratitudes li span.txtDate{ color:#0097A7; }
 		#timeline ul + ul{ opacity: 0.7; }
 		#thanksForm fieldset p:nth-child(2n) input[type="text"]{ border-right: solid 1px #1E88E5; border-left: solid 0 transparent; }
 		.clear{clear:both;}
@@ -99,15 +104,12 @@
     </amp-img>
 </section><section role="region" id="timeline">
 	<h2>Timeline</h2>
-	<ul><li><a href="timeline.html?id=1"><span class="txtDesc">Watch less TV</span> <span class="txtDate">Sep 08, 2016</span></a></li><li><a href="timeline.html?id=2"><span class="txtDesc">Watch Cartoons</span> <span class="txtDate">Sep 08, 2016</span></a></li><li><a href="timeline.html?id=3"><span class="txtDesc">Something Awesome</span> <span class="txtDate">Sep 09, 2016</span></a></li><li><a href="timeline.html?id=4"><span class="txtDesc">Test 456</span> <span class="txtDate">Sep 26, 2016</span></a></li><li><a href="timeline.html?id=5"><span class="txtDesc">Get a Free Cheeseburger</span> <span class="txtDate">Oct 21, 2016</span></a></li><li><a href="timeline.html?id=6"><span class="txtDesc">Finish portfolio</span> <span class="txtDate">Dec 05, 2016</span></a></li><li><a href="timeline.html?id=7"><span class="txtDesc">Do a Happy Dance</span> <span class="txtDate">Sep 06, 2018</span></a></li><li><a href="timeline.html?id=8"><span class="txtDesc">Second Time</span> <span class="txtDate">Apr 05, 2019</span></a></li><li><a href="timeline.html?id=9"><span class="txtDesc">Win a race</span> <span class="txtDate">Jan 01, 2020</span></a></li><li><a href="timeline.html?id=10"><span class="txtDesc">run THE marathon</span> <span class="txtDate">Sep 07, 2023</span></a></li></ul><ul><li><a href="timeline.html?id=0"><span class="txtDesc">Yesterday</span> <span class="txtDate">Sep 07, 2016</span></a></li></ul>
+	<ul><li><a href="timeline.html?id=3"><span class="txtDesc">Something Awesome</span> <span class="txtDate">Sep 09, 2016</span></a></li><li><a href="timeline.html?id=4"><span class="txtDesc">Test 456</span> <span class="txtDate">Sep 26, 2016</span></a></li><li><a href="timeline.html?id=5"><span class="txtDesc">Get a Free Cheeseburger</span> <span class="txtDate">Oct 21, 2016</span></a></li><li><a href="timeline.html?id=6"><span class="txtDesc">Finish portfolio</span> <span class="txtDate">Dec 05, 2016</span></a></li><li><a href="timeline.html?id=7"><span class="txtDesc">Do a Happy Dance</span> <span class="txtDate">Sep 06, 2018</span></a></li><li><a href="timeline.html?id=8"><span class="txtDesc">Second Time</span> <span class="txtDate">Apr 05, 2019</span></a></li><li><a href="timeline.html?id=9"><span class="txtDesc">Win a race</span> <span class="txtDate">Jan 01, 2020</span></a></li><li><a href="timeline.html?id=10"><span class="txtDesc">run THE marathon</span> <span class="txtDate">Sep 07, 2023</span></a></li></ul><ul><li><a href="timeline.html?id=0"><span class="txtDesc">Yesterday</span> <span class="txtDate">Sep 07, 2016</span></a></li><li><a href="timeline.html?id=2"><span class="txtDesc">Watch less TV</span> <span class="txtDate">Sep 08, 2016</span></a></li></ul>
 	<p><a class="btn" href="timeline.html">Add Event</a></p>
 </section><section role="region" id="inspiration">
-	<h2>Inspiration <a href="#">+</a></h2>
-	<p>Lorem Ipsum</p>
-	<p>Testing 123</p>
-	<p>In the Pursuit of Happyness</p>
-	<p>Without friends no one would choose to live, though he had all other goods.</p>
-	<p>Those that know, do.<br />Those that understand teach.</p>
+	<h2>Inspiration</h2>
+	<ul><li><span class="txtDesc">"Your life is an occasion. Rise to it."</span> <span class="txtRef">Dustin Hoffman as Mr. Magorium in "Mr. Magorium's Wonder Emporium"</span> <span class="txtDate">2007</span></li><li><span class="txtDesc">"Science without religion is lame. Religion without science is blind."</span> <span class="txtRef">Albert Einstein </span> <span class="txtDate">1879-1955</span></li></ul>
+	<p><a class="btn" href="inspiration.html">Add Inspiration</a></p>
 </section><section role="region" id="thanks">
 	<h2>Thanks!</h2>
 	<form method="post" action="php/thanks.php" target="_top" id="thanksForm">
@@ -137,9 +139,9 @@
 			</p>
 		</fieldset>
 	</form>
-</section><section role="region">
+</section><section role="region" id="gratitudes">
 	<h2>Gratitudes</h2>
-	<p>Love <span class="date">Sep 02, 2016</span></p><p>Technology! <span class="date">Sep 07, 2016</span></p><p>Indoor Plumbing <span class="date">Sep 08, 2016</span></p><p>Earth <span class="date">Sep 02, 2016</span></p><p>Music <span class="date">Sep 02, 2016</span></p>
+	<li><span class="txtDesc">Beauty in the Breakdown</span> <span class="txtDate">Sep 09, 2016</span></li><li><span class="txtDesc">Love</span> <span class="txtDate">Sep 02, 2016</span></li><li><span class="txtDesc">Indoor Plumbing</span> <span class="txtDate">Sep 08, 2016</span></li><li><span class="txtDesc">Second Chances</span> <span class="txtDate">Sep 09, 2016</span></li><li><span class="txtDesc">Opportunity</span> <span class="txtDate">Sep 09, 2016</span></li>
 </section>
 		</article>
 		<div class="clear"></div>
