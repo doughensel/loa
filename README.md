@@ -17,6 +17,11 @@ The purpose behind 'LoA' is to create a web tool that will allow for anyone to p
 
 Focus pulls one event from the Timeline list and sets it as the largest element on the homepage/index.
 
+__**To Do**__
+-[ ] Create Customization Option: Pull Random Timeline Event
+-[ ] Create Customization Option: Pull Latest Timeline Event
+-[ ] Create Customization Option: Pull Latest 'Focus' Event from Timeline
+
 ### Timeline
 Timeline is a tool that will allow for the user to list out events/accomplishments that they wish to achieve -- coupled with a rough date for completion/reward. If the date passes, the event is moved down to a secondary list of past Events.
 
