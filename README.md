@@ -1,5 +1,5 @@
 # LoA
-**v 0.0.1**
+**v 0.1.0**
 
 Micro-site for goal tracking and daily affirmations
 
