@@ -11,6 +11,7 @@ In these studies, some common themes start to pop up.
 The purpose behind 'LoA' is to create a web tool that will allow for anyone to pick and choose from a variety of modules. Then, hopefully, use these to the benefit in their own lives.
 
 **To Do:**
+- [ ] Add a Cron job type script which will update all modules each day
 - [ ] Create Search tool that can query individual and all modules
 - [ ] Create Image upload tool
 
