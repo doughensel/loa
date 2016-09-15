@@ -3,77 +3,270 @@
 <head>
 	<title>LoA</title>
 	<meta charset="utf-8">
-	<link rel="canonical" href="index.html">
+	<link rel="canonical" href="http://localhost/loa/index.html">
 	<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 	<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 	<style amp-custom>
-		html{font-family:Arial;font-size:62.5%;color:#1565C0;}
-		body{background-color:#FAFAFA;}
-		h1,h2,h3{width:100%;text-align:center;font-weight:normal;padding:0;margin:0;color:#37474F;}
-		h1{font-size:2.4rem;color:#263238;margin:auto;width:11vw;margin-bottom:-2.4rem;}
-			h1 + h2{ color:#1565C0; }
-		h2{font-size:2.2rem;margin-bottom:1vw;}
-			h2 a{ float: right; }
-			#focus h2{margin-bottom:0;}
-		h3{font-size:2rem;}
-		p{padding:0;margin: 0vw 2vw 2vw 2vw;}
-		a{text-decoration:none;color:#0091EA;}
-		button, input[type="submit"], submit, .btn{ background-color:#0091EA;color:#FFFFFF;border:solid 0px transparent; padding: 10px 15px; font-size:1.4rem; float:right;margin-top:1rem;}
-		fieldset{margin:0;padding:0;}
-		ul{margin:0;padding-left:0rem;}
-		label{ display: block; }
-		input[type="text"]{ background-color:transparent;border: solid 0px transparent;border-left:solid 1px #1E88E5;border-bottom:solid 1px #1E88E5; display:block; margin: -1rem auto 0rem auto; width: 96%;padding:2%; color:#1E88E5; font-size: 1.6rem;}
-		textarea{ border: solid 1px #1E88E5; width: 90%; padding: 5%; background-color: transparent; font-size: 1.6rem; color: #1E88E5; height: 30vw;resize: none;}
-		input[type="text"]:focus, input[type="number"]:focus, textarea:focus{ background-color: #FFFFFF; }
-		li{ list-style:none;clear:both;padding: 0.5rem;display:block; color: #1565C0; }
-		li a{ display: block;color: #1565C0; }
-			span.txtDate,
-			span.txtDesc{ width: 100%;display:block; }
-			span.txtDate{ color:#0091EA; }
-			span.txtRef{ display: block;text-align: right;padding-left: 17%;width: 83%;font-style: italic;color: #0097A7;}
-				span.txtRef + span.txtDate{ text-align: right; }
-		#timeline ul + ul{ opacity: 0.7; }
-		#thanksForm fieldset p:nth-child(2n) input[type="text"]{ border-right: solid 1px #1E88E5; border-left: solid 0 transparent; }
-		.clear{clear:both;}
-		#skipnav{ position:absolute;top:-1000px;left:-1000px; }
-		#content{
-			width: 100%;
-			max-width: 800px;
-		}
-		form,fieldset{border:0 none;}
-		article section, #focus{
-			font-size: calc(1em + 1vw);
-			padding: 2vw;
-			width: 46vw;
-			height: 46vw;
-			overflow: scroll;
-			float: left;
-			background-color:#FAFAFA;
-			outline:solid 1px #CFD8DC;
-		}
-		section{font-size:1.6rem;}
-		#focus{
-			min-height: 48vw;
-			height: auto;
-			width: 96vw;
-			max-width: 777px;
-			outline:solid 0px transparent;
-			text-align: center;
-		}
-		nav{width:100%;max-width:790px;padding:1vw 0vw 2.5vw 0vw;}
-		nav ul{margin:0;padding:0;width:100%;}
-		nav ul li{list-style-type:none;}
-		#editLink{ display:block;float:right;text-align:right;width:40vw;padding-right:3vw;font-size: calc(1em + 1vw); }
+html {
+    font-family: Arial;
+    font-size: 62.5%;
+    color: #1565C0;
+}
 
-		@media screen and (min-width: 750px){
-			#content,nav{margin:auto;}
-			article section, #focus{max-width:330px;min-height:1px;height:50vw;max-height:250px;font-size:1.8rem;margin:0.5vw 0.4vw 0.5vw 0.5vw;outline:solid 1px #CFD8DC;}
-			#focus{ max-width: 730px; }
-			h1{ margin-bottom:-3.4rem;font-size:3.4rem; }
-			h2{ margin-bottom: 3rem; }
-		}
+body {
+    background-color: #FAFAFA;
+}
 
-	</style>
+h1,
+h2,
+h3 {
+    width: 100%;
+    text-align: center;
+    font-weight: normal;
+    padding: 0;
+    margin: 0;
+    color: #37474F;
+}
+
+h1 {
+    font-size: 2.4rem;
+    color: #263238;
+    margin: auto;
+    width: 11vw;
+    margin-bottom: -2.4rem;
+}
+
+h1 + h2 {
+    color: #1565C0;
+}
+
+h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1vw;
+}
+
+h2 a {
+    float: right;
+}
+
+#focus h2 {
+    margin-bottom: 0;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+p {
+    padding: 0;
+    margin: 0vw 2vw 2vw 2vw;
+}
+
+a {
+    text-decoration: none;
+    color: #0091EA;
+}
+
+button,
+input[type="submit"],
+submit,
+.btn {
+    background-color: #0091EA;
+    color: #FFFFFF;
+    border: solid 0px transparent;
+    padding: 10px 15px;
+    font-size: 1.4rem;
+    float: right;
+    margin-top: 1rem;
+}
+
+fieldset {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    margin: 0;
+    padding-left: 0rem;
+}
+
+label {
+    display: block;
+}
+
+input[type="text"] {
+    background-color: transparent;
+    border: solid 0px transparent;
+    border-left: solid 1px #1E88E5;
+    border-bottom: solid 1px #1E88E5;
+    display: block;
+    margin: -1rem auto 0rem auto;
+    width: 96%;
+    padding: 2%;
+    color: #1E88E5;
+    font-size: 1.6rem;
+}
+
+textarea {
+    border: solid 1px #1E88E5;
+    width: 90%;
+    padding: 5%;
+    background-color: transparent;
+    font-size: 1.6rem;
+    color: #1E88E5;
+    height: 30vw;
+    resize: none;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+textarea:focus {
+    background-color: #FFFFFF;
+}
+
+li {
+    list-style: none;
+    clear: both;
+    padding: 0.5rem;
+    display: block;
+    color: #1565C0;
+}
+
+li a {
+    display: block;
+    color: #1565C0;
+}
+
+span.txtDate,
+span.txtDesc {
+    width: 100%;
+    display: block;
+}
+
+span.txtDate {
+    color: #0091EA;
+}
+
+span.txtRef {
+    display: block;
+    text-align: right;
+    padding-left: 17%;
+    width: 83%;
+    font-style: italic;
+    color: #0097A7;
+}
+
+span.txtRef + span.txtDate {
+    text-align: right;
+}
+
+#timeline ul + ul {
+    opacity: 0.7;
+}
+
+#thanksForm fieldset p:nth-child(2n) input[type="text"] {
+    border-right: solid 1px #1E88E5;
+    border-left: solid 0 transparent;
+}
+
+.clear {
+    clear: both;
+}
+
+#skipnav {
+    position: absolute;
+    top: -1000px;
+    left: -1000px;
+}
+
+#content {
+    width: 100%;
+    max-width: 800px;
+}
+
+form,
+fieldset {
+    border: 0 none;
+}
+
+article section,
+#focus {
+    font-size: calc(1em + 1vw);
+    padding: 2vw;
+    width: 46vw;
+    height: 46vw;
+    overflow: scroll;
+    float: left;
+    background-color: #FAFAFA;
+    outline: solid 1px #CFD8DC;
+}
+
+section {
+    font-size: 1.6rem;
+}
+
+#focus {
+    min-height: 48vw;
+    height: auto;
+    width: 96vw;
+    max-width: 777px;
+    outline: solid 0px transparent;
+    text-align: center;
+}
+
+nav {
+    width: 100%;
+    max-width: 790px;
+    padding: 1vw 0vw 2.5vw 0vw;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+nav ul li {
+    list-style-type: none;
+}
+
+#editLink {
+    display: block;
+    float: right;
+    text-align: right;
+    width: 40vw;
+    padding-right: 3vw;
+    font-size: calc(1em + 1vw);
+}
+
+@media screen and (min-width: 750px) {
+    #content,
+    nav {
+        margin: auto;
+    }
+    article section,
+    #focus {
+        max-width: 330px;
+        min-height: 1px;
+        height: 50vw;
+        max-height: 250px;
+        font-size: 1.8rem;
+        margin: 0.5vw 0.4vw 0.5vw 0.5vw;
+        outline: solid 1px #CFD8DC;
+    }
+    #focus {
+        max-width: 730px;
+    }
+    h1 {
+        margin-bottom: -3.4rem;
+        font-size: 3.4rem;
+    }
+    h2 {
+        margin-bottom: 3rem;
+    }
+}
+</style>
+
 	<script async src="https://cdn.ampproject.org/v0.js"></script>
 	<script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
 </head>
@@ -90,56 +283,7 @@
 	</header>
 	<main role="main" id="content">
 		<article role="article" id="output">
-			<section id="focus">
-	<h2>Finish portfolio</h2><h3>gotta get this shit done!</h3><p>Dec 04, 2016</p>
-	<!-- max for focus container h:100px x w:250px -->
-	<amp-img
-        src="img/rose.svg"
-        width="117" placeholder
-        alt="Secondary Description"
-        height="100" role="img" tabindex="0">
-    </amp-img>
-</section><section role="region" id="timeline">
-	<h2>Timeline</h2>
-	<ul><li><a href="timeline.html?id=4"><span class="txtDesc">Music</span> <span class="txtDate">Sep 15, 2016</span></a></li><li><a href="timeline.html?id=5"><span class="txtDesc">Test 456</span> <span class="txtDate">Sep 26, 2016</span></a></li><li><a href="timeline.html?id=6"><span class="txtDesc">Get a Free Cheeseburger</span> <span class="txtDate">Oct 21, 2016</span></a></li><li><a href="timeline.html?id=7"><span class="txtDesc">Finish portfolio</span> <span class="txtDate">Dec 04, 2016</span></a></li><li><a href="timeline.html?id=8"><span class="txtDesc">Do a Happy Dance</span> <span class="txtDate">Sep 06, 2018</span></a></li><li><a href="timeline.html?id=9"><span class="txtDesc">Second Time</span> <span class="txtDate">Apr 05, 2019</span></a></li><li><a href="timeline.html?id=10"><span class="txtDesc">Win a race</span> <span class="txtDate">Jan 01, 2020</span></a></li><li><a href="timeline.html?id=11"><span class="txtDesc">run THE marathon</span> <span class="txtDate">Sep 07, 2023</span></a></li></ul><ul><li><a href="timeline.html?id=0"><span class="txtDesc">Yesterday</span> <span class="txtDate">Sep 07, 2016</span></a></li><li><a href="timeline.html?id=2"><span class="txtDesc">Watch less TV</span> <span class="txtDate">Sep 08, 2016</span></a></li><li><a href="timeline.html?id=3"><span class="txtDesc">Something Awesome</span> <span class="txtDate">Sep 09, 2016</span></a></li></ul>
-	<p><a class="btn" href="timeline.html">Add Event</a></p>
-</section><section role="region" id="inspiration">
-	<h2>Inspiration</h2>
-	<ul id="inspirations"><li><a href="inspiration.html?id=0"><span class="txtDesc">"Your life is an occasion. Rise to it."</span> <span class="txtRef">Dustin Hoffman as Mr. Magorium in "Mr. Magorium's Wonder Emporium"</span> <span class="txtDate">2007</span></a></li><li><a href="inspiration.html?id=1"><span class="txtDesc">"Science without religion is lame. Religion without science is blind."</span> <span class="txtRef">Albert Einstein </span> <span class="txtDate">1879-1955</span></a></li></ul>
-	<p><a class="btn" href="inspiration.html">Add Inspiration</a></p>
-</section><section role="region" id="thanks">
-	<h2>Thanks!</h2>
-	<form method="post" action="php/thanks.php" target="_top" id="thanksForm">
-		<fieldset>
-			<p>
-				<label for="thanks1">Thank you for...</label><br />
-				<input type="text" name="thanks1" id="thanks1" value="">
-			</p>
-			<p>
-				<label for="thanks2">Thank you for...</label><br />
-				<input type="text" name="thanks2" id="thanks2" value="">
-			</p>
-			<p>
-				<label for="thanks3">Thank you for...</label><br />
-				<input type="text" name="thanks3" id="thanks3" value="">
-			</p>
-			<p>
-				<label for="thanks4">Thank you for...</label><br />
-				<input type="text" name="thanks4" id="thanks4" value="">
-			</p>
-			<p>
-				<label for="thanks5">Thank you for...</label><br />
-				<input type="text" name="thanks5" id="thanks5" value="">
-			</p>
-			<p>
-				<input type="submit" value="Thanks!">
-			</p>
-		</fieldset>
-	</form>
-</section><section role="region" id="gratitudes">
-	<h2>Gratitudes</h2>
-	<li><span class="txtDesc">Beauty in the Breakdown</span> <span class="txtDate">Sep 09, 2016</span></li><li><span class="txtDesc">Love</span> <span class="txtDate">Sep 02, 2016</span></li><li><span class="txtDesc">Indoor Plumbing</span> <span class="txtDate">Sep 08, 2016</span></li><li><span class="txtDesc">Second Chances</span> <span class="txtDate">Sep 09, 2016</span></li><li><span class="txtDesc">Opportunity</span> <span class="txtDate">Sep 09, 2016</span></li>
-</section>
+			
 		</article>
 		<div class="clear"></div>
 	</main>
