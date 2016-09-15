@@ -1,0 +1,33 @@
+<!doctype html>
+<html ⚡ lang="en">
+<head>
+	<title>LoA</title>
+	<meta charset="utf-8">
+	<link rel="canonical" href="{$ROOT}index.html">
+	<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+	{$AMP_CSS}
+	{$CORE_CSS}
+	<script async src="https://cdn.ampproject.org/v0.js"></script>
+	<script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+</head>
+<body>
+	<a href="#content" id="skipnav">Jump to Content</a>
+	<header role="banner">
+		<nav role="navigation">
+			<h1>LoA</h1>
+			<ul role="menubar">
+				<li role="menuitem" id="editLink"><a href="edit.html">Edit</a></li>
+				<div class="clear"></div>
+			</ul>
+		</nav>
+	</header>
+	<main role="main" id="content">
+		<article role="article" id="output">
+			{$OUTPUT}
+		</article>
+		<div class="clear"></div>
+	</main>
+	<footer role="contentinfo">
+	</footer>
+</body>
+</html>
