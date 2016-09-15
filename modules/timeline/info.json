@@ -1,3 +1,9 @@
-[{
-	"dependencies" : {}
-}]
+{
+	"name"    : "timeline",
+	"version" : "0.2.0",
+	"desc"    : "Test 123",
+	"dependencies" : {
+		"modules" : [],
+		"js" : []
+	}
+}
