@@ -1,0 +1,10 @@
+{
+	"name"    : "focus",
+	"version" : "0.2.0",
+	"desc"    : "Something Awesome",
+	"default" : 0,
+	"dependencies" : {
+		"modules" : [ "timeline", "apple" ],
+		"js" : ["test.js"]
+	}
+}
