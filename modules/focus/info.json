@@ -3,8 +3,9 @@
 	"version" : "0.2.0",
 	"desc"    : "Something Awesome",
 	"default" : 0,
+	"active"  : false,
 	"dependencies" : {
-		"modules" : [ "timeline", "apple" ],
-		"js" : ["test.js"]
+		"modules" : [ "timeline" ],
+		"js" : []
 	}
 }

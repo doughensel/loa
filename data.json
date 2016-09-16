@@ -1,1 +1,1 @@
-[{"name":"focus","version":"0.2.0","desc":"Something Awesome","default":0,"dependencies":{"modules":["timeline","apple"],"js":["test.js"]}},{"name":"timeline","version":"0.2.0","desc":"Test 123","dependencies":{"modules":[],"js":[]}}]
+[{"name":"focus","version":"0.2.0","desc":"Something Awesome","default":0,"active":false,"dependencies":{"modules":["timeline"],"js":[]}},{"name":"timeline","version":"0.2.0","desc":"Test 123","active":false,"dependencies":{"modules":[],"js":[]}}]
