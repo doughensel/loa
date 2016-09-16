@@ -1,9 +1,14 @@
 <?php
 
+	/**
+	Install.php generates the data.json file of the available modules for LoA
+	**/
+
 	include_once('config.php'); // $GLOBALS[] and also includes functions.php
 
 	$json     = array();
 	$mod_name = $_GET['name'] ?: '';
+	$mod_del  = $_GET['delete'] ?: '';
 	$folders  = scandir( $GLOBALS['MOD_ROOT'] );
 
 
@@ -38,6 +43,17 @@
 			array_push( $json, $info );
 		}
 	}// if( $mod_name !== '' )
+
+
+	// remove a module from the data.json
+	if( $mod_del !== '' ){
+		$path  = $GLOBALS['MOD_ROOT'] . $mod_name . '/info.json';
+		$info  = getJSONasArray( $path );
+		$index = findIndex( $json, 'name', $mod_name );
+		if( $index >= 0 ){
+			array_splice( $json, $index, 1 );
+		}
+	}
 
 
 	// check dependencies
