@@ -37,14 +37,14 @@
 		$path  = $GLOBALS['MOD_ROOT'] . $mod_name . '/info.json';
 		$info  = getJSONasArray( $path );
 		$index = findIndex( $json, 'name', $mod_name );
-		print_r( $json );
-		echo '<br />' . $index . '<br />';
+				// print_r( $json );
+				// echo '<br />' . $index . '<br />';
 		if( $index >= 0 ){
 			$json[$index] = $info;
 		}else{
 			array_push( $json, $info );
 		}
-		print_r( $json );
+				// print_r( $json );
 	}// if( $mod_name !== '' )
 
 
@@ -53,12 +53,12 @@
 		$path  = $GLOBALS['MOD_ROOT'] . $mod_del . '/info.json';
 		$info  = getJSONasArray( $path );
 		$index = findIndex( $json, 'name', $mod_del );
-		print_r( $json );
-		echo '<br />' . $index . '<br />';
+				// print_r( $json );
+				// echo '<br />' . $index . '<br />';
 		if( $index >= 0 ){
 			array_splice( $json, $index, 1 );
 		}
-		print_r( $json );
+				// print_r( $json );
 	}
 
 
