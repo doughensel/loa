@@ -12,7 +12,7 @@
 	fileTest( $AMP_CSS  );	// functions.php
 	fileTest( $CORE_CSS );	// functions.php
 
-	if( !file_exists($DATA) ){
+	if( !file_exists( $GLOBALS['DATA'] ) ){
 		include_once('install.php');
 	}
 
@@ -21,6 +21,17 @@
 		$FILE = file_get_contents( $TEMPLATE );
 
 		$OUTPUT = '';
+
+		$layout = getJSONasArray( $GLOBALS['DATA'] );
+
+		foreach( $layout as $section ){
+			if( $section['active'] === true ){
+				$OUTPUT .= $section['name'];
+			}else{
+				$OUTPUT .= $section['desc'];
+			}
+		}
+
 
 		$FILE = str_replace( '{$OUTPUT}', $OUTPUT, $FILE );
 

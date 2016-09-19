@@ -20,7 +20,7 @@
 			$path = $GLOBALS['MOD_ROOT'] . $folder;
 			if( is_dir($path) 
 				&& $folder !== '.' && $folder !== '..' 
-				&& $folder !== 'core' 
+				&& $folder !== 'core' && $folder !== ''
 				&& file_exists($path . '/info.json') )
 			{
 				$info = json_decode( file_get_contents($path . '/info.json'), true );
@@ -37,22 +37,28 @@
 		$path  = $GLOBALS['MOD_ROOT'] . $mod_name . '/info.json';
 		$info  = getJSONasArray( $path );
 		$index = findIndex( $json, 'name', $mod_name );
+		print_r( $json );
+		echo '<br />' . $index . '<br />';
 		if( $index >= 0 ){
 			$json[$index] = $info;
 		}else{
 			array_push( $json, $info );
 		}
+		print_r( $json );
 	}// if( $mod_name !== '' )
 
 
 	// remove a module from the data.json
 	if( $mod_del !== '' ){
-		$path  = $GLOBALS['MOD_ROOT'] . $mod_name . '/info.json';
+		$path  = $GLOBALS['MOD_ROOT'] . $mod_del . '/info.json';
 		$info  = getJSONasArray( $path );
-		$index = findIndex( $json, 'name', $mod_name );
+		$index = findIndex( $json, 'name', $mod_del );
+		print_r( $json );
+		echo '<br />' . $index . '<br />';
 		if( $index >= 0 ){
 			array_splice( $json, $index, 1 );
 		}
+		print_r( $json );
 	}
 
 
@@ -64,14 +70,16 @@
 					if( $key === 'modules' ){
 						for( $i=0, $x=count($value); $i<$x; $i++) {
 							if( !findIndex( $json, 'name', $value[$i] ) ){
-								echo 'ERROR: ' . $elem['name'] . ' is missing the dependency -> ' . $value[$i] . '<br />';
+								$msg = 'INSTALL.PHP | ERROR: ' . $elem['name'] . ' is missing the dependency -> ' . $value[$i];
+								array_push( $GLOBAL['errors'], $msg );
 							}// if( !findIndex( $json, 'name', $value[$i] ) )
 						}// for( $i=0, $x=count($value); $i<$x; $i++) 
 					}else{
 						for( $i=0, $x=count($value); $i<$x; $i++ ){
 							$path = $GLOBALS['MOD_ROOT'] . 'core/' . $key . '/' . $value[$i];
 							if( !file_exists($path) ){
-								echo 'ERROR: ' . $elem['name'] . ' is missing the dependency -> ' . $path . '<br />';
+								$msg = 'INSTALL.PHP | ERROR: ' . $elem['name'] . ' is missing the dependency -> ' . $path;
+								array_push( $GLOBAL['errors'], $msg );
 							}
 						}
 					}// if( $key === 'modules' )

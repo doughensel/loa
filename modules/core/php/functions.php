@@ -1,5 +1,7 @@
 <?php 
 
+	$GLOBAL['errors'] = $GLOBAL['errors'] ?: array();
+
 	function getJSONasArray( $fileName ){
 		if( file_exists( $fileName ) ){
 			return json_decode(file_get_contents($fileName), true) ?: array();
@@ -35,7 +37,7 @@
 			}// foreach( $elem as $k => $v )
 			$counter++;
 		}// foreach( $arr as $elem )
-		return false;
+		return -1;
 	}// function findIndex( $arr, $key, $value )
 
 ?>
