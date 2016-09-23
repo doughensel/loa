@@ -43,6 +43,8 @@
 		file_put_contents( $GLOBALS['DOC_ROOT'] . 'index.html', $FILE);
 
 	}
+
+	saveLog();
 	
 
 ?>

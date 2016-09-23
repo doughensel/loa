@@ -1,6 +1,8 @@
 <?php 
 
-	$GLOBAL['errors'] = $GLOBAL['errors'] ?: array();
+	date_default_timezone_set('America/New_York');
+
+	$LOG = array( '456test' );
 
 	function getJSONasArray( $fileName ){
 		if( file_exists( $fileName ) ){
@@ -39,5 +41,11 @@
 		}// foreach( $arr as $elem )
 		return -1;
 	}// function findIndex( $arr, $key, $value )
+
+	function saveLog( $data = false ){
+		$data = $data ?: $GLOBALS['LOG'];
+		$d = new DateTime();
+		file_put_contents( $GLOBALS['MOD_ROOT'] . 'logs/log_' . $d->getTimestamp() . '.txt', json_encode($data) );
+	}
 
 ?>

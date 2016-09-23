@@ -2,7 +2,7 @@
 	"name"    : "focus",
 	"version" : "0.2.0",
 	"desc"    : "Something Awesome",
-	"default" : 0,
+	"width"   : 2,
 	"active"  : false,
 	"dependencies" : {
 		"modules" : [ "timeline" ],
