@@ -69,8 +69,8 @@
 				foreach( $elem['dependencies'] as $key => $value ){
 					if( $key === 'modules' ){
 						for( $i=0, $x=count($value); $i<$x; $i++) {
-							if( !findIndex( $json, 'name', $value[$i] ) ){
-								$msg = 'INSTALL.PHP | ERROR: ' . $elem['name'] . ' is missing the dependency -> ' . $value[$i];
+							if( findIndex( $json, 'name', $value[$i] ) === -1 ){
+								$msg = '[[ ERROR ]] INSTALL.PHP: ' . $elem['name'] . ' is missing the dependency -> ' . $value[$i];
 								array_push( $GLOBALS['LOG'], $msg );
 							}// if( !findIndex( $json, 'name', $value[$i] ) )
 						}// for( $i=0, $x=count($value); $i<$x; $i++) 
@@ -78,7 +78,7 @@
 						for( $i=0, $x=count($value); $i<$x; $i++ ){
 							$path = $GLOBALS['MOD_ROOT'] . 'core/' . $key . '/' . $value[$i];
 							if( !file_exists($path) ){
-								$msg = 'INSTALL.PHP | ERROR: ' . $elem['name'] . ' is missing the dependency -> ' . $path;
+								$msg = '[[ ERROR ]] INSTALL.PHP: ' . $elem['name'] . ' is missing the dependency -> ' . $path;
 								array_push( $GLOBALS['LOG'], $msg );
 							}
 						}

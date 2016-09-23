@@ -44,7 +44,7 @@
 
 	}
 
-	saveLog();
+	saveLog( $GLOBALS['LOG'] );
 	
 
 ?>

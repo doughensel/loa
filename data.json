@@ -1,1 +1,1 @@
-[{"name":"timeline","version":"0.2.0","desc":"Test 123","active":false,"dependencies":{"modules":[],"js":[]}},{"name":"focus","version":"0.2.0","desc":"Something Awesome","width":2,"active":false,"dependencies":{"modules":["timeline"],"js":[]}}]
+[{"name":"focus","version":"0.2.0","desc":"Something Awesome","width":2,"active":false,"dependencies":{"modules":["timeline"],"js":[]}},{"name":"timeline","version":"0.2.0","desc":"Test 123","active":false,"dependencies":{"modules":[],"js":[]}}]

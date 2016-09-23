@@ -2,8 +2,6 @@
 
 	date_default_timezone_set('America/New_York');
 
-	$LOG = array( '456test' );
-
 	function getJSONasArray( $fileName ){
 		if( file_exists( $fileName ) ){
 			return json_decode(file_get_contents($fileName), true) ?: array();
@@ -45,7 +43,7 @@
 	function saveLog( $data = false ){
 		$data = $data ?: $GLOBALS['LOG'];
 		$d = new DateTime();
-		file_put_contents( $GLOBALS['MOD_ROOT'] . 'logs/log_' . $d->getTimestamp() . '.txt', json_encode($data) );
+		file_put_contents( $GLOBALS['MOD_ROOT'] . 'logs/log_' . $d->getTimestamp() . '.log', json_encode($data) );
 	}
 
 ?>
