@@ -12,8 +12,17 @@
 	}// function getJSONasArray( $fileName )
 
 	function updatePaths( $data ){
+
 		$data = str_replace( '{$ROOT}', $GLOBALS['PATH'] . $GLOBALS['ROOT'], $data );
 		$data = str_replace( '{$MODULES}', $GLOBALS['MODULES'], $data );
+		
+		$AMP_CSS   = $GLOBALS['MOD_ROOT'] . 'core/css/amp_css.tmpl';
+		$CORE_CSS  = $GLOBALS['MOD_ROOT'] . 'core/css/core_css.tmpl';
+		if( fileTest( $AMP_CSS  ) && fileTest( $CORE_CSS ) ){
+			$data = str_replace( '{$AMP_CSS}' , file_get_contents($AMP_CSS) , $data );
+			$data = str_replace( '{$CORE_CSS}', file_get_contents($CORE_CSS), $data );
+		}
+
 		return $data;
 	}// function updatePaths( $data )
 
@@ -21,8 +30,9 @@
 		if( file_exists( $fileName ) ){
 			return true;
 		}else{
-			$filesAvailable = false;
-			echo 'ERROR: ' . $fileName . ' is missing.<br />';
+			$msg = '[[ ERROR ]] FUNCTIONS.PHP: ' . $fileName . ' is missing';
+			array_push( $GLOBALS['LOG'], $msg );
+			return false;
 		}
 	}// function fileTest( $fileName )
 

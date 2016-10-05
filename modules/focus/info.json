@@ -7,5 +7,20 @@
 	"dependencies" : {
 		"modules" : [ "timeline" ],
 		"js" : []
-	}
+	},
+	"layout" : [
+		{
+			"type"    : "radio",
+			"id"      : "choice",
+			"options" : {
+				"Most Recent" : "recent",
+				"Random"      : "random",
+				"Specific"    : {
+					"type"    : "select",
+					"id"      : "specific",
+					"source"  : "timeline"
+				}
+			}
+		}
+	]
 }

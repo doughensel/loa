@@ -6,5 +6,31 @@
 	"dependencies" : {
 		"modules" : [],
 		"js" : []
-	}
+	},
+	"layout" : [
+		{ 
+			"type" : "text",
+			"id"   : "name"
+		},
+		{
+			"type" : "textarea",
+			"id"   : "desc"
+		},
+		{
+			"type" : "number",
+			"id"   : "day"
+		},
+		{
+			"type" : "number",
+			"id"   : "week"
+		},
+		{
+			"type" : "number",
+			"id"   : "month"
+		},
+		{
+			"type" : "number",
+			"id"   : "year"
+		}
+	]
 }
